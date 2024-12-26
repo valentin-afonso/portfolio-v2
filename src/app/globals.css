@@ -9,7 +9,7 @@
 }
 
 p {
-  @apply text-red-400;
+  @apply text-red-600;
 }
 
 @layer base {

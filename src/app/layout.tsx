@@ -10,10 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={GeistMono.className}>
-      <body>
-        <p className="bg-red-600">testetst</p>
-        {children}
-      </body>
+      <body>{children}</body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );

@@ -30,7 +30,6 @@ type RichTextProps = SliceComponentProps<Content.RichTextSlice>;
 const RichText = ({ slice }: RichTextProps): JSX.Element => {
   return (
     <section>
-      <p className="text-red-700">text css </p>
       <PrismicRichText field={slice.primary.content} components={components} />
     </section>
   );
