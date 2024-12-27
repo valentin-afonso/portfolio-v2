@@ -11,6 +11,7 @@ export type BlogProps = SliceComponentProps<Content.BlogSlice>;
 /**
  * Component for "Blog" Slices.
  */
+
 const Blog = ({ slice }: BlogProps): JSX.Element => {
   return (
     <section
@@ -19,9 +20,13 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
     >
       <GridLayout>
         <PrismicRichText field={slice.primary.title} />
-        <Link href={slice.primary.link.url} target="_blank">
+        <Link
+          href="https://www.staytuneed.com/blog/author/valentin-afonso"
+          target="_blank"
+        >
           {slice.primary.link.text}
         </Link>
+
         <BlocArticles />
       </GridLayout>
     </section>

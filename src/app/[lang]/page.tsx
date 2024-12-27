@@ -14,9 +14,7 @@ import { components } from "@/slices";
 
 export async function generateMetadata({
   params: { lang },
-}: {
-  params: { lang: string };
-}): Promise<Metadata> {
+}: any): Promise<Metadata> {
   const client = createClient();
   const home = await client.getByUID("page", "home", { lang });
 
@@ -30,11 +28,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Index({
-  params: { lang },
-}: {
-  params: { lang: string };
-}) {
+export default async function Index({ params: { lang } }: any) {
   // The client queries content from the Prismic API
   const client = createClient();
   const home = await client.getByUID("page", "home", {

@@ -13,15 +13,11 @@ type Params = { uid: string; lang: string };
  * This page renders a Prismic Document dynamically based on the URL.
  */
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  // const { uid } = await params;
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { uid, lang } = await params;
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid, { lang: params.lang })
+    .getByUID("page", uid, { lang: lang })
     .catch(() => notFound());
 
   return {
@@ -38,12 +34,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: Params }) {
-  // const { uid, params } = await params;
+export default async function Page({ params }: any) {
+  const { uid, lang } = await params;
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid, {
-      lang: params.lang,
+    .getByUID("page", uid, {
+      lang: lang,
     })
     .catch(() => notFound());
   return <SliceZone slices={page.data.slices} components={components} />;
