@@ -1,0 +1,28 @@
+{
+  "id": "degree_section",
+  "type": "SharedSlice",
+  "name": "DegreeSection",
+  "description": "DegreeSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading3,heading4,heading5,heading6,list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

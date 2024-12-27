@@ -6,9 +6,6 @@ import * as prismic from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-import { getLocales } from "@/utils/getLocales";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-
 // This component renders your homepage.
 //
 // Use Next's generateMetadata function to render page metadata.
@@ -43,11 +40,5 @@ export default async function Index({
   const home = await client.getByUID("page", "home", {
     lang,
   });
-  const locales = await getLocales(home, client);
-  return (
-    <>
-      <LanguageSwitcher locales={locales} />
-      <SliceZone slices={home.data.slices} components={components} />
-    </>
-  );
+  return <SliceZone slices={home.data.slices} components={components} />;
 }

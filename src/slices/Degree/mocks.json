@@ -1,0 +1,51 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"skills": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "OPQUAST",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			},
+			"date": {
+				"__TYPE__": "FieldContent",
+				"value": "friend",
+				"type": "Text"
+			},
+			"is_certification": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"school": {
+				"__TYPE__": "FieldContent",
+				"value": "even",
+				"type": "Text"
+			},
+			"certification_desc": {
+				"__TYPE__": "FieldContent",
+				"value": "fill",
+				"type": "Text"
+			},
+			"intitule": {
+				"__TYPE__": "FieldContent",
+				"value": "outer",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

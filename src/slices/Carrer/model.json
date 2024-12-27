@@ -1,0 +1,107 @@
+{
+  "id": "carrer",
+  "type": "SharedSlice",
+  "name": "Carrer",
+  "description": "Carrer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "date": {
+          "type": "Text",
+          "config": {
+            "label": "date",
+            "placeholder": ""
+          }
+        },
+        "job_title": {
+          "type": "Text",
+          "config": {
+            "label": "job title",
+            "placeholder": ""
+          }
+        },
+        "job_status": {
+          "type": "Text",
+          "config": {
+            "label": "job status",
+            "placeholder": ""
+          }
+        },
+        "company": {
+          "type": "Text",
+          "config": {
+            "label": "company",
+            "placeholder": ""
+          }
+        },
+        "location": {
+          "type": "Text",
+          "config": {
+            "label": "location",
+            "placeholder": ""
+          }
+        },
+        "skills": {
+          "type": "Group",
+          "config": {
+            "label": "skills",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "react",
+                    "next",
+                    "javascript",
+                    "PHP",
+                    "html",
+                    "css",
+                    "figma",
+                    "prestashop",
+                    "contao",
+                    "tailwind",
+                    "adobeXD",
+                    "illustrator",
+                    "dato",
+                    "drupal",
+                    "flutter",
+                    "github",
+                    "ionic",
+                    "laravel",
+                    "neltifly",
+                    "photoshop",
+                    "strapi",
+                    "swift",
+                    "symfony",
+                    "typescript",
+                    "vercel",
+                    "vue",
+                    "wordpress",
+                    "payload",
+                    "apiplatform",
+                    "docker",
+                    "prismic",
+                    "hono",
+                    "OPQUAST",
+                    "mongoDB",
+                    "mySQL"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

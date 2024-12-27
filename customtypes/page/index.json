@@ -27,6 +27,27 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "blog": {
+              "type": "SharedSlice"
+            },
+            "projects": {
+              "type": "SharedSlice"
+            },
+            "degree_section": {
+              "type": "SharedSlice"
+            },
+            "stack_journey": {
+              "type": "SharedSlice"
+            },
+            "career_section": {
+              "type": "SharedSlice"
+            },
+            "socials": {
+              "type": "SharedSlice"
+            },
+            "hero_section": {
+              "type": "SharedSlice"
+            },
             "rich_text": {
               "type": "SharedSlice"
             }

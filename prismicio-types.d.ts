@@ -4,6 +4,47 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type DegreeDocumentDataSlicesSlice = DegreeSlice;
+
+/**
+ * Content for Degree documents
+ */
+interface DegreeDocumentData {
+  /**
+   * name field in *Degree*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Degree*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DegreeDocumentDataSlicesSlice>;
+}
+
+/**
+ * Degree document from Prismic
+ *
+ * - **API ID**: `degree`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DegreeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<DegreeDocumentData>, "degree", Lang>;
+
 type NavigationDocumentDataSlicesSlice = NavigationItemSlice;
 
 /**
@@ -60,7 +101,15 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | BlogSlice
+  | ProjectsSlice
+  | DegreeSectionSlice
+  | StackJourneySlice
+  | CareerSectionSlice
+  | SocialsSlice
+  | HeroSectionSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -132,7 +181,582 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = NavigationDocument | PageDocument;
+type PrpjectsDocumentDataSlicesSlice = ProjectSlice;
+
+/**
+ * Content for Projects documents
+ */
+interface PrpjectsDocumentData {
+  /**
+   * Slice Zone field in *Projects*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prpjects.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PrpjectsDocumentDataSlicesSlice>;
+}
+
+/**
+ * Projects document from Prismic
+ *
+ * - **API ID**: `prpjects`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrpjectsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PrpjectsDocumentData>,
+    "prpjects",
+    Lang
+  >;
+
+type SkillDocumentDataSlicesSlice = CarrerSlice;
+
+/**
+ * Content for Career documents
+ */
+interface SkillDocumentData {
+  /**
+   * name field in *Career*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skill.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Career*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skill.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SkillDocumentDataSlicesSlice>;
+}
+
+/**
+ * Career document from Prismic
+ *
+ * - **API ID**: `skill`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SkillDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SkillDocumentData>, "skill", Lang>;
+
+export type AllDocumentTypes =
+  | DegreeDocument
+  | NavigationDocument
+  | PageDocument
+  | PrpjectsDocument
+  | SkillDocument;
+
+/**
+ * Primary content in *Blog → Default → Primary*
+ */
+export interface BlogSliceDefaultPrimary {
+  /**
+   * Title field in *Blog → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * link field in *Blog → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Blog Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Blog*
+ */
+type BlogSliceVariation = BlogSliceDefault;
+
+/**
+ * Blog Shared Slice
+ *
+ * - **API ID**: `blog`
+ * - **Description**: Blog
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogSlice = prismic.SharedSlice<"blog", BlogSliceVariation>;
+
+/**
+ * Primary content in *CareerSection → Default → Primary*
+ */
+export interface CareerSectionSliceDefaultPrimary {
+  /**
+   * title field in *CareerSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CareerSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareerSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CareerSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CareerSection*
+ */
+type CareerSectionSliceVariation = CareerSectionSliceDefault;
+
+/**
+ * CareerSection Shared Slice
+ *
+ * - **API ID**: `career_section`
+ * - **Description**: CareerSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareerSectionSlice = prismic.SharedSlice<
+  "career_section",
+  CareerSectionSliceVariation
+>;
+
+/**
+ * Item in *Carrer → Default → Primary → skills*
+ */
+export interface CarrerSliceDefaultPrimarySkillsItem {
+  /**
+   * skill field in *Carrer → Default → Primary → skills*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.skills[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+  >;
+}
+
+/**
+ * Primary content in *Carrer → Default → Primary*
+ */
+export interface CarrerSliceDefaultPrimary {
+  /**
+   * date field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  date: prismic.KeyTextField;
+
+  /**
+   * job title field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.job_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  job_title: prismic.KeyTextField;
+
+  /**
+   * job status field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.job_status
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  job_status: prismic.KeyTextField;
+
+  /**
+   * company field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.company
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company: prismic.KeyTextField;
+
+  /**
+   * location field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.location
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  location: prismic.KeyTextField;
+
+  /**
+   * skills field in *Carrer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carrer.default.primary.skills[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills: prismic.GroupField<Simplify<CarrerSliceDefaultPrimarySkillsItem>>;
+}
+
+/**
+ * Default variation for Carrer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarrerSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CarrerSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Carrer*
+ */
+type CarrerSliceVariation = CarrerSliceDefault;
+
+/**
+ * Carrer Shared Slice
+ *
+ * - **API ID**: `carrer`
+ * - **Description**: Carrer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarrerSlice = prismic.SharedSlice<"carrer", CarrerSliceVariation>;
+
+/**
+ * Item in *Degree → Default → Primary → skills*
+ */
+export interface DegreeSliceDefaultPrimarySkillsItem {
+  /**
+   * skill field in *Degree → Default → Primary → skills*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.skills[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<"OPQUAST" | "2">;
+}
+
+/**
+ * Primary content in *Degree → Default → Primary*
+ */
+export interface DegreeSliceDefaultPrimary {
+  /**
+   * date field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  date: prismic.KeyTextField;
+
+  /**
+   * Intitule field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.intitule
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  intitule: prismic.KeyTextField;
+
+  /**
+   * is certification field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: degree.default.primary.is_certification
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_certification: prismic.BooleanField;
+
+  /**
+   * Certification desc field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.certification_desc
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  certification_desc: prismic.KeyTextField;
+
+  /**
+   * School field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.school
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  school: prismic.KeyTextField;
+
+  /**
+   * skills field in *Degree → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree.default.primary.skills[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills: prismic.GroupField<Simplify<DegreeSliceDefaultPrimarySkillsItem>>;
+}
+
+/**
+ * Default variation for Degree Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DegreeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DegreeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Degree*
+ */
+type DegreeSliceVariation = DegreeSliceDefault;
+
+/**
+ * Degree Shared Slice
+ *
+ * - **API ID**: `degree`
+ * - **Description**: Degree
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DegreeSlice = prismic.SharedSlice<"degree", DegreeSliceVariation>;
+
+/**
+ * Primary content in *DegreeSection → Default → Primary*
+ */
+export interface DegreeSectionSliceDefaultPrimary {
+  /**
+   * Title field in *DegreeSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: degree_section.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DegreeSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DegreeSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DegreeSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DegreeSection*
+ */
+type DegreeSectionSliceVariation = DegreeSectionSliceDefault;
+
+/**
+ * DegreeSection Shared Slice
+ *
+ * - **API ID**: `degree_section`
+ * - **Description**: DegreeSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DegreeSectionSlice = prismic.SharedSlice<
+  "degree_section",
+  DegreeSectionSliceVariation
+>;
+
+/**
+ * Item in *HeroSection → Default → Primary → socials*
+ */
+export interface HeroSectionSliceDefaultPrimarySocialsItem {
+  /**
+   * id_social field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].id_social
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  id_social: prismic.KeyTextField;
+
+  /**
+   * link field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *HeroSection → Default → Primary*
+ */
+export interface HeroSectionSliceDefaultPrimary {
+  /**
+   * profil field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.profil
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  profil: prismic.ImageField<never>;
+
+  /**
+   * status field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.status
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  status: prismic.KeyTextField;
+
+  /**
+   * Text field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * socials field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  socials: prismic.GroupField<
+    Simplify<HeroSectionSliceDefaultPrimarySocialsItem>
+  >;
+}
+
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSection*
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault;
+
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: HeroSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSlice = prismic.SharedSlice<
+  "hero_section",
+  HeroSectionSliceVariation
+>;
 
 /**
  * Primary content in *NavigationItem → Default → Primary*
@@ -180,6 +804,176 @@ export type NavigationItemSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Project → Default → Primary → skills*
+ */
+export interface ProjectSliceDefaultPrimarySkillsItem {
+  /**
+   * skill field in *Project → Default → Primary → skills*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.skills[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<"1" | "2">;
+}
+
+/**
+ * Item in *Project → Default → Primary → images*
+ */
+export interface ProjectSliceDefaultPrimaryImagesItem {
+  /**
+   * image field in *Project → Default → Primary → images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Project → Default → Primary*
+ */
+export interface ProjectSliceDefaultPrimary {
+  /**
+   * title field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * repo git field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.repo_git
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  repo_git: prismic.LinkField;
+
+  /**
+   * url field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  url: prismic.LinkField;
+
+  /**
+   * skills field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.skills[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills: prismic.GroupField<Simplify<ProjectSliceDefaultPrimarySkillsItem>>;
+
+  /**
+   * images field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<Simplify<ProjectSliceDefaultPrimaryImagesItem>>;
+}
+
+/**
+ * Default variation for Project Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Project*
+ */
+type ProjectSliceVariation = ProjectSliceDefault;
+
+/**
+ * Project Shared Slice
+ *
+ * - **API ID**: `project`
+ * - **Description**: Project
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectSlice = prismic.SharedSlice<
+  "project",
+  ProjectSliceVariation
+>;
+
+/**
+ * Primary content in *Projects → Default → Primary*
+ */
+export interface ProjectsSliceDefaultPrimary {
+  /**
+   * Title field in *Projects → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Projects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Projects*
+ */
+type ProjectsSliceVariation = ProjectsSliceDefault;
+
+/**
+ * Projects Shared Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Projects
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSlice = prismic.SharedSlice<
+  "projects",
+  ProjectsSliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -224,6 +1018,330 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *Socials → Default → Primary → social*
+ */
+export interface SocialsSliceDefaultPrimarySocialItem {
+  /**
+   * id_social field in *Socials → Default → Primary → social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[].id_social
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  id_social: prismic.KeyTextField;
+
+  /**
+   * link field in *Socials → Default → Primary → social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *Socials → Default → Primary*
+ */
+export interface SocialsSliceDefaultPrimary {
+  /**
+   * social field in *Socials → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: socials.default.primary.social[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social: prismic.GroupField<Simplify<SocialsSliceDefaultPrimarySocialItem>>;
+}
+
+/**
+ * Default variation for Socials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SocialsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Socials*
+ */
+type SocialsSliceVariation = SocialsSliceDefault;
+
+/**
+ * Socials Shared Slice
+ *
+ * - **API ID**: `socials`
+ * - **Description**: Socials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialsSlice = prismic.SharedSlice<
+  "socials",
+  SocialsSliceVariation
+>;
+
+/**
+ * Item in *StackJourney → Default → Primary → skills favorite*
+ */
+export interface StackJourneySliceDefaultPrimarySkillsItem {
+  /**
+   * skill field in *StackJourney → Default → Primary → skills favorite*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+  >;
+}
+
+/**
+ * Item in *StackJourney → Default → Primary → skills next*
+ */
+export interface StackJourneySliceDefaultPrimarySkillsNextItem {
+  /**
+   * skill field in *StackJourney → Default → Primary → skills next*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills_next[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+  >;
+}
+
+/**
+ * Item in *StackJourney → Default → Primary → skills other*
+ */
+export interface StackJourneySliceDefaultPrimarySkillsOtherItem {
+  /**
+   * skill field in *StackJourney → Default → Primary → skills other*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills_other[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+  >;
+}
+
+/**
+ * Primary content in *StackJourney → Default → Primary*
+ */
+export interface StackJourneySliceDefaultPrimary {
+  /**
+   * favorite stack field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.favorite_stack
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  favorite_stack: prismic.RichTextField;
+
+  /**
+   * skills favorite field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills: prismic.GroupField<
+    Simplify<StackJourneySliceDefaultPrimarySkillsItem>
+  >;
+
+  /**
+   * next stack field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.next_stack
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  next_stack: prismic.RichTextField;
+
+  /**
+   * skills next field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills_next[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills_next: prismic.GroupField<
+    Simplify<StackJourneySliceDefaultPrimarySkillsNextItem>
+  >;
+
+  /**
+   * other field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.other
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  other: prismic.RichTextField;
+
+  /**
+   * skills other field in *StackJourney → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stack_journey.default.primary.skills_other[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills_other: prismic.GroupField<
+    Simplify<StackJourneySliceDefaultPrimarySkillsOtherItem>
+  >;
+}
+
+/**
+ * Default variation for StackJourney Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StackJourneySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StackJourneySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *StackJourney*
+ */
+type StackJourneySliceVariation = StackJourneySliceDefault;
+
+/**
+ * StackJourney Shared Slice
+ *
+ * - **API ID**: `stack_journey`
+ * - **Description**: StackJourney
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StackJourneySlice = prismic.SharedSlice<
+  "stack_journey",
+  StackJourneySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -245,21 +1363,79 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      DegreeDocument,
+      DegreeDocumentData,
+      DegreeDocumentDataSlicesSlice,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PrpjectsDocument,
+      PrpjectsDocumentData,
+      PrpjectsDocumentDataSlicesSlice,
+      SkillDocument,
+      SkillDocumentData,
+      SkillDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BlogSlice,
+      BlogSliceDefaultPrimary,
+      BlogSliceVariation,
+      BlogSliceDefault,
+      CareerSectionSlice,
+      CareerSectionSliceDefaultPrimary,
+      CareerSectionSliceVariation,
+      CareerSectionSliceDefault,
+      CarrerSlice,
+      CarrerSliceDefaultPrimarySkillsItem,
+      CarrerSliceDefaultPrimary,
+      CarrerSliceVariation,
+      CarrerSliceDefault,
+      DegreeSlice,
+      DegreeSliceDefaultPrimarySkillsItem,
+      DegreeSliceDefaultPrimary,
+      DegreeSliceVariation,
+      DegreeSliceDefault,
+      DegreeSectionSlice,
+      DegreeSectionSliceDefaultPrimary,
+      DegreeSectionSliceVariation,
+      DegreeSectionSliceDefault,
+      HeroSectionSlice,
+      HeroSectionSliceDefaultPrimarySocialsItem,
+      HeroSectionSliceDefaultPrimary,
+      HeroSectionSliceVariation,
+      HeroSectionSliceDefault,
       NavigationItemSlice,
       NavigationItemSliceDefaultPrimary,
       NavigationItemSliceVariation,
       NavigationItemSliceDefault,
+      ProjectSlice,
+      ProjectSliceDefaultPrimarySkillsItem,
+      ProjectSliceDefaultPrimaryImagesItem,
+      ProjectSliceDefaultPrimary,
+      ProjectSliceVariation,
+      ProjectSliceDefault,
+      ProjectsSlice,
+      ProjectsSliceDefaultPrimary,
+      ProjectsSliceVariation,
+      ProjectsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      SocialsSlice,
+      SocialsSliceDefaultPrimarySocialItem,
+      SocialsSliceDefaultPrimary,
+      SocialsSliceVariation,
+      SocialsSliceDefault,
+      StackJourneySlice,
+      StackJourneySliceDefaultPrimarySkillsItem,
+      StackJourneySliceDefaultPrimarySkillsNextItem,
+      StackJourneySliceDefaultPrimarySkillsOtherItem,
+      StackJourneySliceDefaultPrimary,
+      StackJourneySliceVariation,
+      StackJourneySliceDefault,
     };
   }
 }

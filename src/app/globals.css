@@ -72,3 +72,69 @@
     @apply bg-background text-foreground;
   }
 }
+.bg_gradient_colorfull {
+  background: linear-gradient(
+    -145.539deg,
+    #04005e 0%,
+    #ed2937 63%,
+    #ff9954 100%
+  );
+}
+h2 {
+  @apply text-2xl font-bold;
+}
+section[data-slice-type="hero_section"] h1 {
+  @apply text-4xl font-bold;
+}
+
+section[data-slice-type="hero_section"] p {
+  @apply flex items-center text-3xl;
+}
+section[data-slice-type="hero_section"] .status_pro p {
+  @apply text-xs;
+}
+
+section[data-slice-type="career_section"] .control button,
+section[data-slice-type="degree_section"] .control button {
+  @apply transform-none;
+  position: initial;
+}
+
+.embla__progress {
+  @apply relative bg-black/40 h-[2px] w-20 overflow-hidden;
+  border-radius: 1.8rem;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  justify-self: flex-end;
+  align-self: center;
+  max-width: 90%;
+}
+.embla__progress__bar {
+  @apply bg-black absolute w-full top-0 bottom-0;
+  left: -100%;
+}
+
+circle {
+  stroke-width: 2px;
+  stroke-opacity: 1;
+}
+
+.animate-pulse {
+  fill-opacity: 0;
+  transform-origin: 50% 50%;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    stroke-width: 3px;
+    stroke-opacity: 1;
+    transform: scale(0.3);
+  }
+  to {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(2);
+  }
+}

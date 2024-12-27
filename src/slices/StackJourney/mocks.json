@@ -1,0 +1,96 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"favorite_stack": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In nisi eu sint. Eiusmod laborum mollit enim irure dolore laboris id eiusmod tempor. Ea do do anim ipsum."
+						}
+					}
+				]
+			},
+			"skills": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			},
+			"next_stack": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit cupidatat ad irure non non adipisicing ea nulla sit. Ullamco aliquip ut laborum amet exercitation amet duis adipisicing officia ullamco irure irure. Dolore exercitation duis amet anim dolore officia deserunt et sunt labore in quis sit aliquip voluptate."
+						}
+					}
+				]
+			},
+			"skills_next": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			},
+			"other": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod dolore enim aliquip eu minim pariatur laborum nostrud ullamco esse aliqua incididunt. Veniam officia aliqua Lorem commodo ex eu irure aliqua."
+						}
+					}
+				]
+			},
+			"skills_other": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "2",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

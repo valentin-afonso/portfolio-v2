@@ -1,0 +1,205 @@
+{
+  "id": "stack_journey",
+  "type": "SharedSlice",
+  "name": "StackJourney",
+  "description": "StackJourney",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "favorite_stack": {
+          "type": "StructuredText",
+          "config": {
+            "label": "favorite stack",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "skills": {
+          "type": "Group",
+          "config": {
+            "label": "skills favorite",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "react",
+                    "next",
+                    "javascript",
+                    "PHP",
+                    "html",
+                    "css",
+                    "figma",
+                    "prestashop",
+                    "contao",
+                    "tailwind",
+                    "adobeXD",
+                    "illustrator",
+                    "dato",
+                    "drupal",
+                    "flutter",
+                    "github",
+                    "ionic",
+                    "laravel",
+                    "neltifly",
+                    "photoshop",
+                    "strapi",
+                    "swift",
+                    "symfony",
+                    "typescript",
+                    "vercel",
+                    "vue",
+                    "wordpress",
+                    "payload",
+                    "apiplatform",
+                    "docker",
+                    "prismic",
+                    "hono",
+                    "OPQUAST",
+                    "mongoDB",
+                    "mySQL"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "next_stack": {
+          "type": "StructuredText",
+          "config": {
+            "label": "next stack",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "skills_next": {
+          "type": "Group",
+          "config": {
+            "label": "skills next",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "react",
+                    "next",
+                    "javascript",
+                    "PHP",
+                    "html",
+                    "css",
+                    "figma",
+                    "prestashop",
+                    "contao",
+                    "tailwind",
+                    "adobeXD",
+                    "illustrator",
+                    "dato",
+                    "drupal",
+                    "flutter",
+                    "github",
+                    "ionic",
+                    "laravel",
+                    "neltifly",
+                    "photoshop",
+                    "strapi",
+                    "swift",
+                    "symfony",
+                    "typescript",
+                    "vercel",
+                    "vue",
+                    "wordpress",
+                    "payload",
+                    "apiplatform",
+                    "docker",
+                    "prismic",
+                    "hono",
+                    "OPQUAST",
+                    "mongoDB",
+                    "mySQL"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "other": {
+          "type": "StructuredText",
+          "config": {
+            "label": "other",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "skills_other": {
+          "type": "Group",
+          "config": {
+            "label": "skills other",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "react",
+                    "next",
+                    "javascript",
+                    "PHP",
+                    "html",
+                    "css",
+                    "figma",
+                    "prestashop",
+                    "contao",
+                    "tailwind",
+                    "adobeXD",
+                    "illustrator",
+                    "dato",
+                    "drupal",
+                    "flutter",
+                    "github",
+                    "ionic",
+                    "laravel",
+                    "neltifly",
+                    "photoshop",
+                    "strapi",
+                    "swift",
+                    "symfony",
+                    "typescript",
+                    "vercel",
+                    "vue",
+                    "wordpress",
+                    "payload",
+                    "apiplatform",
+                    "docker",
+                    "prismic",
+                    "hono",
+                    "OPQUAST",
+                    "mongoDB",
+                    "mySQL"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

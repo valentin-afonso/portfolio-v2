@@ -1,0 +1,52 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"location": {
+				"__TYPE__": "FieldContent",
+				"value": "palace",
+				"type": "Text"
+			},
+			"date": {
+				"__TYPE__": "FieldContent",
+				"value": "whether",
+				"type": "Text"
+			},
+			"company": {
+				"__TYPE__": "FieldContent",
+				"value": "excited",
+				"type": "Text"
+			},
+			"job_title": {
+				"__TYPE__": "FieldContent",
+				"value": "plant",
+				"type": "Text"
+			},
+			"job_status": {
+				"__TYPE__": "FieldContent",
+				"value": "sang",
+				"type": "Text"
+			},
+			"skills": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "1",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

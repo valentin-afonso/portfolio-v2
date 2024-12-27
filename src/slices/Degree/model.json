@@ -1,0 +1,76 @@
+{
+  "id": "degree",
+  "type": "SharedSlice",
+  "name": "Degree",
+  "description": "Degree",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "date": {
+          "type": "Text",
+          "config": {
+            "label": "date",
+            "placeholder": ""
+          }
+        },
+        "intitule": {
+          "type": "Text",
+          "config": {
+            "label": "Intitule",
+            "placeholder": ""
+          }
+        },
+        "is_certification": {
+          "type": "Boolean",
+          "config": {
+            "label": "is certification",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "certification_desc": {
+          "type": "Text",
+          "config": {
+            "label": "Certification desc",
+            "placeholder": ""
+          }
+        },
+        "school": {
+          "type": "Text",
+          "config": {
+            "label": "School",
+            "placeholder": ""
+          }
+        },
+        "skills": {
+          "type": "Group",
+          "config": {
+            "label": "skills",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "OPQUAST",
+                    "2"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -9,9 +9,6 @@ import { components } from "@/slices";
 
 type Params = { uid: string; lang: string };
 
-import { getLocales } from "@/utils/getLocales";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-
 /**
  * This page renders a Prismic Document dynamically based on the URL.
  */
@@ -49,15 +46,7 @@ export default async function Page({ params }: { params: Params }) {
       lang: params.lang,
     })
     .catch(() => notFound());
-
-  const locales = await getLocales(page, client);
-
-  return (
-    <>
-      <LanguageSwitcher locales={locales} />
-      <SliceZone slices={page.data.slices} components={components} />
-    </>
-  );
+  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateStaticParams() {

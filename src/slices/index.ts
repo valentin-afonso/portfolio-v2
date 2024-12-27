@@ -3,6 +3,16 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  blog: dynamic(() => import("./Blog")),
+  career_section: dynamic(() => import("./CareerSection")),
+  carrer: dynamic(() => import("./Carrer")),
+  degree: dynamic(() => import("./Degree")),
+  degree_section: dynamic(() => import("./DegreeSection")),
+  hero_section: dynamic(() => import("./HeroSection")),
   navigation_item: dynamic(() => import("./NavigationItem")),
+  project: dynamic(() => import("./Project")),
+  projects: dynamic(() => import("./Projects")),
   rich_text: dynamic(() => import("./RichText")),
+  socials: dynamic(() => import("./Socials")),
+  stack_journey: dynamic(() => import("./StackJourney")),
 };
