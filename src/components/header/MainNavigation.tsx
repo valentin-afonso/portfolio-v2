@@ -9,8 +9,8 @@ export async function MainNavigation() {
       <ul className="flex items-center gap-4">
         {navigation.data.slices.map((slice) =>
           slice.primary.link.map((link, key) => (
-            <li>
-              <NavLink key={key} link={link} />
+            <li key={key}>
+              <NavLink link={link} />
             </li>
           ))
         )}

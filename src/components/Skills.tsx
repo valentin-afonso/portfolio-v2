@@ -6,7 +6,7 @@ export default function Skills({ skills }: any) {
   return (
     <ul className="flex gap-4">
       {skills.map((skill: any) => {
-        return <Skill skill={skill} />;
+        return <Skill key={skill.id} skill={skill} />;
       })}
     </ul>
   );
