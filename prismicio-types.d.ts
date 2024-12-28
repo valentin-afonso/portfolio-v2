@@ -132,6 +132,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FloatingTextSlice
   | BlogSlice
   | ProjectsSlice
   | DegreeSectionSlice
@@ -685,6 +686,51 @@ type DegreeSectionSliceVariation = DegreeSectionSliceDefault;
 export type DegreeSectionSlice = prismic.SharedSlice<
   "degree_section",
   DegreeSectionSliceVariation
+>;
+
+/**
+ * Primary content in *FloatingText → Default → Primary*
+ */
+export interface FloatingTextSliceDefaultPrimary {
+  /**
+   * Text field in *FloatingText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: floating_text.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FloatingText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FloatingTextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FloatingTextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FloatingText*
+ */
+type FloatingTextSliceVariation = FloatingTextSliceDefault;
+
+/**
+ * FloatingText Shared Slice
+ *
+ * - **API ID**: `floating_text`
+ * - **Description**: FloatingText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FloatingTextSlice = prismic.SharedSlice<
+  "floating_text",
+  FloatingTextSliceVariation
 >;
 
 /**
@@ -1515,6 +1561,10 @@ declare module "@prismicio/client" {
       DegreeSectionSliceDefaultPrimary,
       DegreeSectionSliceVariation,
       DegreeSectionSliceDefault,
+      FloatingTextSlice,
+      FloatingTextSliceDefaultPrimary,
+      FloatingTextSliceVariation,
+      FloatingTextSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimarySocialsItem,
       HeroSectionSliceDefaultPrimary,

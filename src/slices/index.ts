@@ -8,6 +8,7 @@ export const components = {
   carrer: dynamic(() => import("./Carrer")),
   degree: dynamic(() => import("./Degree")),
   degree_section: dynamic(() => import("./DegreeSection")),
+  floating_text: dynamic(() => import("./FloatingText")),
   hero_section: dynamic(() => import("./HeroSection")),
   navigation: dynamic(() => import("./Navigation")),
   navigation_item: dynamic(() => import("./NavigationItem")),
