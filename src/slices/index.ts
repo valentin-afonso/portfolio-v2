@@ -9,6 +9,7 @@ export const components = {
   degree: dynamic(() => import("./Degree")),
   degree_section: dynamic(() => import("./DegreeSection")),
   hero_section: dynamic(() => import("./HeroSection")),
+  navigation: dynamic(() => import("./Navigation")),
   navigation_item: dynamic(() => import("./NavigationItem")),
   project: dynamic(() => import("./Project")),
   projects: dynamic(() => import("./Projects")),

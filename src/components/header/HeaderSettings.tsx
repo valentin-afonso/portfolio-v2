@@ -1,6 +1,7 @@
 import { getLocales } from "@/utils/getLocales";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { createClient } from "@/prismicio";
+import ToggleDarkMode from "@/components/ToggleDarkMode";
 
 export default async function HeaderSettings({ lang }: { lang: string }) {
   const client = createClient();
@@ -9,8 +10,9 @@ export default async function HeaderSettings({ lang }: { lang: string }) {
   });
   const locales = await getLocales(home, client);
   return (
-    <div>
+    <div className="flex items-center gap-4">
       <LanguageSwitcher locales={locales} />
+      <ToggleDarkMode />
     </div>
   );
 }

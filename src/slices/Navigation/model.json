@@ -1,8 +1,8 @@
 {
-  "id": "socials",
+  "id": "navigation",
   "type": "SharedSlice",
-  "name": "Socials",
-  "description": "Socials",
+  "name": "Navigation",
+  "description": "Navigation",
   "variations": [
     {
       "id": "default",
@@ -15,25 +15,18 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "label": "Title",
+            "label": "title",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6"
           }
         },
-        "social": {
+        "links": {
           "type": "Group",
           "config": {
-            "label": "social",
+            "label": "Links",
             "repeat": true,
             "fields": {
-              "id_social": {
-                "type": "Text",
-                "config": {
-                  "label": "id_social",
-                  "placeholder": ""
-                }
-              },
               "link": {
                 "type": "Link",
                 "config": {

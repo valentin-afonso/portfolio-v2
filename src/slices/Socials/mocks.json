@@ -32,6 +32,17 @@
 						]
 					}
 				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud quis exercitation sit est eu consectetur occaecat aute magna adipisicing eu consequat. Magna cupidatat qui amet cillum amet quis velit mollit non anim id consequat qui dolor dolor. Et aliquip tempor tempor duis cupidatat ut nulla ut ullamco ex laborum consectetur officia."
+						}
+					}
+				]
 			}
 		},
 		"items": []
