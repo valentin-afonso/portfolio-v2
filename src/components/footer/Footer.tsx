@@ -9,7 +9,6 @@ import FooterComponents from "@/components/footer/FooterComponents";
 export default async function Footer() {
   const client = createClient();
   const footer = await client.getByUID("footer", "footer");
-  console.log(footer.data.slices);
 
   return (
     <footer>

@@ -1,18 +1,28 @@
 import Skills from "@/components/Skills";
 import IconCertification from "@/components/svg/IconCertification";
+import Slide from "@/components/Slide";
 
 export default function DegreeItem({ slice }: any) {
   const is_certif = slice.primary.is_certification;
   const text_top = is_certif ? "certification" : slice.primary.date;
   return (
-    <div className="bg-black text-white p-4">
-      <div className="flex items-center gap-2">
-        {is_certif && <IconCertification />} <span>{text_top}</span>
+    <Slide>
+      <div className="flex items-center gap-2 text-white/75">
+        {is_certif && <IconCertification />}{" "}
+        <span className="text-xl font-bold">{text_top}</span>
       </div>
-      <p>{slice.primary.intitule}</p>
-      {is_certif && <p>{slice.primary.certification_desc}</p>}
-      {!is_certif && <p>At {slice.primary.school}</p>}
-      <Skills skills={slice.primary.skills} />
-    </div>
+      <p className="text-3xl font-bold">{slice.primary.intitule}</p>
+      {is_certif && (
+        <p className="text-xl font-medium  pb-16">
+          {slice.primary.certification_desc}
+        </p>
+      )}
+      {!is_certif && (
+        <p className="text-xl font-medium pb-16">At {slice.primary.school}</p>
+      )}
+      <div className="absolute right-5 bottom-5">
+        <Skills skills={slice.primary.skills} />
+      </div>
+    </Slide>
   );
 }

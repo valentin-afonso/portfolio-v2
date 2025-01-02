@@ -47,7 +47,7 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <GridLayout additional_class="flex justify-between">
+      <GridLayout additional_class="flex justify-between items-center min-h-screen">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4 ">
             <Avatar img={slice.primary.profil} />
