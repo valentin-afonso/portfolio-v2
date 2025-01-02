@@ -19,7 +19,7 @@ const components: JSXMapSerializer = {
     if (node.data.label === "codespan") {
       return (
         <code className="relative inline-block mx-3 overflow-hidden p-[3px]  bg_gradient_colorfull rounded-[8px]">
-          <span className="relative block bg-white overflow-hidden rounded-[6px] py-1 px-4 leading-normal text-xl font-bold">
+          <span className="relative block bg-white dark:bg-black overflow-hidden rounded-[6px] py-1 px-4 leading-normal text-xl font-bold">
             <SvgWave additional_class="absolute left-[-11rem] top-[-12rem]" />
             {children}
           </span>

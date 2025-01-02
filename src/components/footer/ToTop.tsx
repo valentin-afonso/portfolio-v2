@@ -1,3 +1,3 @@
 export default function ToTop() {
-  return <div>ToTop</div>;
+  return <div className="absolute top-7 right-7">ToTop</div>;
 }

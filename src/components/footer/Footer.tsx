@@ -11,8 +11,8 @@ export default async function Footer() {
   const footer = await client.getByUID("footer", "footer");
 
   return (
-    <footer>
-      <GridLayout>
+    <footer className="">
+      <GridLayout additional_class="flex gap-4 relative pt-24">
         <Logo />
         {footer.data.slices.map((silce) => (
           <FooterComponents key={silce.id} slice={silce} />
