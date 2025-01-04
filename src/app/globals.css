@@ -38,6 +38,9 @@
     --radius: 0.5rem;
     --bg-tech: #202328;
     --bg-tech-light: #202328;
+
+    --bg-selection: black;
+    --color-selection: white;
   }
   .dark {
     --background: 216 28% 7%;
@@ -64,6 +67,9 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --bg-selection: white;
+    --color-selection: black;
   }
 }
 
@@ -75,6 +81,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+::selection {
+  color: var(--color-selection);
+  background-color: var(--bg-selection);
+}
+
+.bg_blur {
+  @apply bg-background/20 backdrop-blur-[14px];
+}
 .bg_gradient_colorfull {
   background: linear-gradient(
     -145.539deg,
@@ -84,10 +99,7 @@
   );
 }
 h2 {
-  @apply text-3xl font-bold;
-}
-section[data-slice-type="hero_section"] h1 {
-  @apply text-4xl font-bold;
+  @apply text-3xl font-bold mb-8;
 }
 
 section[data-slice-type="hero_section"] p {

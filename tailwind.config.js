@@ -66,6 +66,7 @@ module.exports = {
       spacing: {
         "icon-tech": "40px",
       },
+      fontFamily: { geist: ["GeistMono", "sans-serif"] },
     },
   },
   plugins: [require("tailwindcss-animate")],

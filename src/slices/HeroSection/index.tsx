@@ -2,6 +2,7 @@ import type { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import StatusPro from "@/components/StatusPro";
 import SocialsHero from "@/components/SocialsHero";
+import SvgHello from "@/components/svg/SvgHello";
 import {
   PrismicRichText,
   SliceComponentProps,
@@ -18,7 +19,7 @@ const components: JSXMapSerializer = {
   label: ({ node, children }) => {
     if (node.data.label === "codespan") {
       return (
-        <code className="relative inline-block mx-3 overflow-hidden p-[3px]  bg_gradient_colorfull rounded-[8px]">
+        <code className="relative inline-block mx-3 overflow-hidden p-[3px]  bg_gradient_colorfull rounded-[8px] font-geist">
           <span className="relative block bg-white dark:bg-black overflow-hidden rounded-[6px] py-1 px-4 leading-normal text-xl font-bold">
             <SvgWave additional_class="absolute left-[-11rem] top-[-12rem]" />
             {children}
@@ -28,7 +29,14 @@ const components: JSXMapSerializer = {
     }
   },
   paragraph: ({ children }) => {
-    return <p className="text-lg text-red">{children}</p>;
+    return <p className="text-lg">{children}</p>;
+  },
+  heading1: ({ children }) => {
+    return (
+      <h1 className="flex items-center gap-4 text-4xl font-bold mb-4">
+        <SvgHello /> {children}
+      </h1>
+    );
   },
 };
 
