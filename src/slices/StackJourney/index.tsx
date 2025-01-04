@@ -30,13 +30,13 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
           </div>
           <div className={class_container_skills}>
             <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
-            <Skills skills={slice.primary.skills} />
+            <Skills skills={slice.primary.skills} isLight />
           </div>
         </div>
         <div className={class_raw}>
           <div className={class_container_skills}>
             <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
-            <Skills skills={slice.primary.skills_next} />
+            <Skills skills={slice.primary.skills_next} isLight />
           </div>
           <div className={`pl-8 ${class_container_text}`}>
             <PrismicRichText field={slice.primary.next_stack} />
@@ -48,7 +48,7 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
           </div>
           <div className={class_container_skills}>
             <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
-            <Skills skills={slice.primary.skills_other} />
+            <Skills skills={slice.primary.skills_other} isLight />
           </div>
         </div>
       </GridLayout>

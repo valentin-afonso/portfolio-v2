@@ -37,7 +37,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --bg-tech: #202328;
-    --bg-tech-light: #202328;
+    --bg-tech-light: #e5efff;
 
     --bg-selection: black;
     --color-selection: white;
@@ -67,6 +67,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --bg-tech-light: #202328;
 
     --bg-selection: white;
     --color-selection: black;
@@ -160,12 +162,23 @@ circle {
 .dark .slide_gradient {
   background: #161b22;
 }
-.skill_gradient {
-  background: linear-gradient(135.815deg, #393f46 0%, #202328 50%);
-}
+
+/**
+  * Tech
+  */
 .tech {
   transition: all 0.3s ease-in-out;
+  @apply after:absolute after:top-[3px] after:left-[3px] after:rounded-[8px] after:bg-tech after:z-0 after:w-[70px] after:h-[70px];
+}
+.is_light .tech {
+  @apply after:bg-techlight;
 }
 .tech svg {
   z-index: 2;
+}
+.skill_gradient {
+  background: linear-gradient(135.815deg, #393f46 0%, #202328 50%);
+}
+html:not(.dark) .is_light .skill_gradient {
+  background: linear-gradient(135.815deg, #f4f8ff 0%, #d8e7ff 50%);
 }

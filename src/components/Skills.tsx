@@ -1,10 +1,9 @@
 import Skill from "./Skill";
-export default function Skills({ skills }: any) {
-  // skills: [{skill: '1'},{skill: '2'}]
+export default function Skills({ skills, isLight }: any) {
   if (!skills) return null;
-
+  const class_light = isLight ? "is_light" : "";
   return (
-    <ul className="flex gap-4">
+    <ul className={`flex gap-4 ${class_light}`}>
       {skills.map((skill: any) => {
         return <Skill key={skill.id} skill={skill} />;
       })}

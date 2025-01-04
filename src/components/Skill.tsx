@@ -118,6 +118,7 @@ export default function Skill({ skill }: any) {
   };
   const IconComponent = techIconMap[skill.skill];
   const IconLibelle = techLibeleMap[skill.skill];
+
   return (
     <li className="group relative h-max">
       {IconLibelle && (
@@ -125,7 +126,7 @@ export default function Skill({ skill }: any) {
           {IconLibelle}
         </span>
       )}
-      <div className=" hover:translate-y-[-10px] tech relative rounded-[8px] skill_gradient w-[76px] h-[76px] flex items-center justify-center after:absolute after:top-[3px] after:left-[3px] after:rounded-[8px] after:bg-tech after:z-0 after:w-[70px] after:h-[70px]">
+      <div className="hover:translate-y-[-10px] tech  relative rounded-[8px] skill_gradient w-[76px] h-[76px] flex items-center justify-center ">
         {IconComponent && <IconComponent />}
       </div>
     </li>
