@@ -277,7 +277,7 @@ CarouselNext.displayName = "CarouselNext";
 const CarouselProgress = () => {
   const { scrollProgress } = useCarousel();
   return (
-    <div className="embla__progress">
+    <div className="embla__progress ">
       <div
         className="embla__progress__bar"
         style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}

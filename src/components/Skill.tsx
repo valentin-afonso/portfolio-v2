@@ -34,7 +34,6 @@ import IconOpquast from "@/components/svg/tech/IconOpquast";
 import IconHono from "@/components/svg/tech/IconHono";
 import IconMongodb from "@/components/svg/tech/IconMongodb";
 import IconMysql from "@/components/svg/tech/IconMysql";
-import { Span } from "next/dist/trace";
 
 type TechName = string;
 type TechLibelle = string;
@@ -80,41 +79,41 @@ export default function Skill({ skill }: any) {
   };
   const techLibeleMap: Record<TechName, TechLibelle> = {
     react: "React",
-    next: "React",
-    javascript: "React",
-    PHP: "React",
-    html: "React",
-    css: "React",
-    figma: "React",
-    prestashop: "React",
-    contao: "React",
-    tailwind: "React",
-    adobeXD: "React",
-    illustrator: "React",
-    dato: "React",
-    drupal: "React",
-    flutter: "React",
-    github: "React",
-    ionic: "React",
-    laravel: "React",
-    neltifly: "React",
-    photoshop: "React",
-    strapi: "React",
-    swift: "React",
-    symfony: "React",
-    typescript: "React",
-    vercel: "React",
-    vue: "React",
-    wordpress: "React",
-    payload: "React",
-    apiplatform: "React",
-    docker: "React",
-    prismic: "React",
-    express: "React",
-    hono: "React",
-    OPQUAST: "React",
-    mongoDB: "React",
-    mySQL: "React",
+    next: "Next",
+    javascript: "JS",
+    PHP: "PHP",
+    html: "html",
+    css: "css",
+    figma: "Figma",
+    prestashop: "Prestahop",
+    contao: "Contao",
+    tailwind: "Tailwind",
+    adobeXD: "AdobeXD",
+    illustrator: "Illustrator",
+    dato: "DatoCMS",
+    drupal: "Drupal",
+    flutter: "Flutter",
+    github: "Github",
+    ionic: "Ionic",
+    laravel: "Laravel",
+    neltifly: "Neltifly",
+    photoshop: "Photoshop",
+    strapi: "Strapi",
+    swift: "Swift",
+    symfony: "Symfony",
+    typescript: "Typescript",
+    vercel: "Vercel",
+    vue: "Vuejs",
+    wordpress: "Wordpress",
+    payload: "Payload",
+    apiplatform: "Api platform",
+    docker: "Docker",
+    prismic: "Prismic",
+    express: "Express",
+    hono: "Hono",
+    OPQUAST: "OPQUAST",
+    mongoDB: "MongoDB",
+    mySQL: "MySQL",
   };
   const IconComponent = techIconMap[skill.skill];
   const IconLibelle = techLibeleMap[skill.skill];
@@ -122,11 +121,11 @@ export default function Skill({ skill }: any) {
   return (
     <li className="group relative h-max">
       {IconLibelle && (
-        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[10px] w-full text-center transition-all text-white/75">
+        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] w-full text-center transition-all ">
           {IconLibelle}
         </span>
       )}
-      <div className="hover:translate-y-[-10px] tech  relative rounded-[8px] skill_gradient w-[76px] h-[76px] flex items-center justify-center ">
+      <div className="tech  relative rounded-[8px] w-[76px] h-[76px] flex items-center justify-center ">
         {IconComponent && <IconComponent />}
       </div>
     </li>

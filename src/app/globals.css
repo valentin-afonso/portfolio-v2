@@ -118,7 +118,7 @@ section[data-slice-type="degree_section"] .control button {
 }
 
 .embla__progress {
-  @apply relative bg-black/40 h-[2px] w-20 overflow-hidden;
+  @apply relative bg-black/40 dark:bg-white/40 h-[2px] w-20 overflow-hidden;
   border-radius: 1.8rem;
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
   justify-self: flex-end;
@@ -126,7 +126,7 @@ section[data-slice-type="degree_section"] .control button {
   max-width: 90%;
 }
 .embla__progress__bar {
-  @apply bg-black absolute w-full top-0 bottom-0;
+  @apply bg-black dark:bg-white absolute w-full top-0 bottom-0;
   left: -100%;
 }
 
@@ -167,18 +167,22 @@ circle {
   * Tech
   */
 .tech {
-  transition: all 0.3s ease-in-out;
-  @apply after:absolute after:top-[3px] after:left-[3px] after:rounded-[8px] after:bg-tech after:z-0 after:w-[70px] after:h-[70px];
+  background: linear-gradient(135.815deg, #393f46 0%, #202328 50%);
+  transition: transform 0.3s ease;
+  @apply text-white/75 after:absolute after:top-[3px] after:left-[3px] after:rounded-[5px] after:bg-tech after:z-0 after:w-[70px] after:h-[70px];
 }
 .is_light .tech {
-  @apply after:bg-techlight;
+  @apply text-black after:bg-techlight;
 }
+.tech:hover {
+  transform: translate3d(0, -8px, 0);
+  background: white;
+}
+
 .tech svg {
   z-index: 2;
 }
-.skill_gradient {
-  background: linear-gradient(135.815deg, #393f46 0%, #202328 50%);
-}
-html:not(.dark) .is_light .skill_gradient {
+
+html:not(.dark) .is_light .tech {
   background: linear-gradient(135.815deg, #f4f8ff 0%, #d8e7ff 50%);
 }

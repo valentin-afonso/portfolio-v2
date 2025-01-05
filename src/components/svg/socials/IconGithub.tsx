@@ -7,7 +7,7 @@ export default function IconGithub() {
         viewBox="0 0 28 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-black overflow-visible"
+        className="fill-black dark:fill-white overflow-visible"
       >
         <path
           fillRule="evenodd"

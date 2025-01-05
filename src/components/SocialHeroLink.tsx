@@ -29,7 +29,7 @@ export default function SocialHeroLink({ social }: any) {
       >
         <SvgWave additional_class="absolute top-[-7rem] left-[-5rem]" />
         {icon}
-        <span className="flex items-center gap-1 justify-end text-right text-black/65 text-xs">
+        <span className="flex items-center gap-1 justify-end text-right text-black/65 dark:text-white/65 text-xs">
           {social.link.text}
           <IconExternLink />
         </span>
