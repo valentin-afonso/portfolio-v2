@@ -15,7 +15,7 @@ const FloatingText = ({ slice }: FloatingTextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pb-44 text-center text-3xl"
     >
       <GridLayout>
         <PrismicRichText field={slice.primary.text} />

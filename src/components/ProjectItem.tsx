@@ -4,7 +4,7 @@ import Skills from "@/components/Skills";
 
 export default function ProjectItem({ slice }: any) {
   return (
-    <div className="bg-[#F6F7FA] dark:bg-[#161B22] rounded-xl border border-border/25 dark:border-transparent">
+    <div className="bg-secondary rounded-xl border border-border/25 dark:border-transparent">
       <div className="p-6 w-[577px]">
         <div className="flex justify-between items-center mb-8">
           <p className="font-bold text-xl">{slice.primary.title}</p>

@@ -20,14 +20,15 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
       className="pb-44"
     >
       <GridLayout>
-        <PrismicRichText field={slice.primary.title} />
-        <Link
-          href="https://www.staytuneed.com/blog/author/valentin-afonso"
-          target="_blank"
-        >
-          {slice.primary.link.text}
-        </Link>
-
+        <div className="w-full items-center flex justify-between">
+          <PrismicRichText field={slice.primary.title} />
+          <Link
+            href="https://www.staytuneed.com/blog/author/valentin-afonso"
+            target="_blank"
+          >
+            {slice.primary.link.text}
+          </Link>
+        </div>
         <BlocArticles />
       </GridLayout>
     </section>

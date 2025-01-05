@@ -125,7 +125,7 @@ export default function Skill({ skill }: any) {
           {IconLibelle}
         </span>
       )}
-      <div className="tech  relative rounded-[8px] w-[76px] h-[76px] flex items-center justify-center ">
+      <div className="tech relative rounded-[8px] w-[76px] h-[76px] flex items-center justify-center ">
         {IconComponent && <IconComponent />}
       </div>
     </li>

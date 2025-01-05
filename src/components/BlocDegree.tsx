@@ -22,10 +22,10 @@ export default async function BlocDegree() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="control flex items-center gap-4 mt-4">
-          <CarouselPrevious />
+        <div className="w-full control flex justify-end items-center gap-4 mt-7">
+          <CarouselPrevious className="rounded-[6px] stroke-border" />
           <CarouselProgress />
-          <CarouselNext />
+          <CarouselNext className="rounded-[6px] stroke-border" />
         </div>
       </Carousel>
     </>

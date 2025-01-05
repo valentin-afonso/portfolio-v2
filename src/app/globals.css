@@ -11,6 +11,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
+    --background-secondary: #f6f7fa;
     --foreground: 0 0% 3.9%;
     --text-dark: black;
     --card: 0 0% 100%;
@@ -44,6 +45,7 @@
   }
   .dark {
     --background: 216 28% 7%;
+    --background-secondary: #161b22;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -160,7 +162,7 @@ circle {
   background: linear-gradient(180deg, #0d1117 0%, #1f2631 100%);
 }
 .dark .slide_gradient {
-  background: #161b22;
+  background: var(--background-secondary);
 }
 
 /**
@@ -185,4 +187,18 @@ circle {
 
 html:not(.dark) .is_light .tech {
   background: linear-gradient(135.815deg, #f4f8ff 0%, #d8e7ff 50%);
+}
+html:not(.dark) .is_light .tech:hover {
+  background: #161b22;
+}
+
+/**
+  * FOOTER
+  */
+footer h2 {
+  @apply font-bold text-xl mb-4;
+}
+footer .socials svg {
+  width: 20px;
+  @apply h-auto;
 }

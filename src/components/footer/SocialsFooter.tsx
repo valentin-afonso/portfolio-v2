@@ -1,14 +1,21 @@
 import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
+import Link from "next/link";
+import IconX from "@/components/svg/socials/IconX";
+import IconLinkedin from "@/components/svg/socials/IconLinkedin";
+import IconGithub from "@/components/svg/socials/IconGithub";
 
 export default function SocialsFooter({ slice }: any) {
   return (
-    <div>
+    <div className="socials">
       <PrismicRichText field={slice.primary.title} />
-      <ul>
+      <ul className="flex items-center gap-8">
         {slice.primary.social.map((item: any) => (
           <li key={item.id}>
-            <PrismicNextLink field={item.link} />
+            <Link href={item.link.url} target="_blank">
+              {item.id_social === "github" && <IconGithub />}
+              {item.id_social === "linkedin" && <IconLinkedin />}
+              {item.id_social === "x" && <IconX />}
+            </Link>
           </li>
         ))}
       </ul>
