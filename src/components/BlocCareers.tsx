@@ -15,7 +15,7 @@ export default async function BlocCareers() {
   return (
     <>
       <Carousel
-        className="slider_visible"
+        className="slider_visible noselect"
         opts={{
           dragFree: false,
           slidesToScroll: 2,
