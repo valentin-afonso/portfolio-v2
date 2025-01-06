@@ -13,7 +13,7 @@ export default async function Footer() {
 
   return (
     <footer className="mb-8">
-      <GridLayout additional_class="relative py-24 border border-[#D4D4D4] rounded-xl overflow-hidden">
+      <GridLayout additional_class="relative py-24 border border-[#D4D4D4] dark:border-border rounded-xl overflow-hidden">
         <SvgWaveXl additional_class="absolute top-[-27rem] left-[-14rem] w-[1714px] h-auto" />
         <div className="flex gap-16 px-8 w-full">
           <Logo />
