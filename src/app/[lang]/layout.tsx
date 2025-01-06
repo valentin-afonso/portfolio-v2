@@ -18,7 +18,7 @@ export default function RootLayout({ children, params }: LayoutType) {
       className={GeistMono.className}
       suppressHydrationWarning={process.env.NODE_ENV === "production"}
     >
-      <body>
+      <body className="overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

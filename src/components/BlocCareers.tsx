@@ -14,10 +14,16 @@ export default async function BlocCareers() {
   const career = await client.getByUID("skill", "career");
   return (
     <>
-      <Carousel>
-        <CarouselContent className="-ml-1">
+      <Carousel
+        className="slider_visible"
+        opts={{
+          dragFree: false,
+          slidesToScroll: 2,
+        }}
+      >
+        <CarouselContent className="ml-[-100px]">
           {career.data.slices.map((slice) => (
-            <CarouselItem key={slice.id} className="basis-1/2 pl-1">
+            <CarouselItem key={slice.id} className="basis-1/2 pl-[100px]">
               <CarrerItem slice={slice} />
             </CarouselItem>
           ))}

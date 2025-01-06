@@ -9,9 +9,10 @@ export default function GridLayout({
   size,
   additional_class,
 }: GridLayoutType) {
+  const class_width = size === "fullwidth" ? "w-full" : "w-[1128px]";
   return (
     <div
-      className={`w-[1128px] max-w-full m-auto px-5 md:px-12 xl:px-0 ${additional_class}`}
+      className={`${class_width} max-w-full m-auto px-5 md:px-12 xl:px-0 ${additional_class}`}
     >
       {children}
     </div>

@@ -30,6 +30,7 @@ type CarouselContextProps = {
   canScrollPrev: boolean;
   canScrollNext: boolean;
   scrollProgress: number;
+  isDragging: boolean;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -70,6 +71,7 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
 
     const onScroll = useCallback((api: CarouselApi) => {
       if (!api) {
@@ -83,7 +85,6 @@ const Carousel = React.forwardRef<
       if (!api) {
         return;
       }
-
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
     }, []);
@@ -126,8 +127,16 @@ const Carousel = React.forwardRef<
       api.on("reInit", onSelect);
       api.on("select", onSelect);
 
+      const onPointerDown = () => setIsDragging(true);
+      const onPointerUp = () => setIsDragging(false);
+
+      api.on("pointerDown", onPointerDown);
+      api.on("pointerUp", onPointerUp);
+
       return () => {
         api?.off("select", onSelect);
+        api?.off("pointerDown", onPointerDown);
+        api?.off("pointerUp", onPointerUp);
       };
     }, [api, onSelect]);
 
@@ -154,6 +163,7 @@ const Carousel = React.forwardRef<
           canScrollPrev,
           canScrollNext,
           scrollProgress,
+          isDragging,
         }}
       >
         <div
@@ -176,10 +186,13 @@ const CarouselContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel();
+  const { carouselRef, orientation, isDragging } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div
+      ref={carouselRef}
+      className={`overflow-hidden ${isDragging ? "scale-90" : "scale-100"} transition-scale`}
+    >
       <div
         ref={ref}
         className={cn(

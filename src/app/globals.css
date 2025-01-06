@@ -202,3 +202,10 @@ footer .socials svg {
   width: 20px;
   @apply h-auto;
 }
+
+.slider_visible > div {
+  overflow: visible !important;
+}
+.transition-scale {
+  transition: all 0.4s ease-in-out;
+}
