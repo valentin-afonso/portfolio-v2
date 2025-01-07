@@ -34,6 +34,12 @@ import IconOpquast from "@/components/svg/tech/IconOpquast";
 import IconHono from "@/components/svg/tech/IconHono";
 import IconMongodb from "@/components/svg/tech/IconMongodb";
 import IconMysql from "@/components/svg/tech/IconMysql";
+import IconDirectus from "@/components/svg/tech/IconDirectus";
+import IconFirebase from "@/components/svg/tech/IconFirebase";
+import IconImdb from "@/components/svg/tech/IconImdb";
+import IconCohere from "@/components/svg/tech/IconCohere";
+import IconApi from "@/components/svg/tech/IconApi";
+import IconNextAuth from "@/components/svg/tech/IconNextAuth";
 
 type TechName = string;
 type TechLibelle = string;
@@ -76,6 +82,12 @@ export default function Skill({ skill }: any) {
     OPQUAST: IconOpquast,
     mongoDB: IconMongodb,
     mySQL: IconMysql,
+    firebase: IconFirebase,
+    directus: IconDirectus,
+    cohere: IconCohere,
+    imdb: IconImdb,
+    nextauth: IconNextAuth,
+    api: IconApi,
   };
   const techLibeleMap: Record<TechName, TechLibelle> = {
     react: "React",
@@ -114,6 +126,12 @@ export default function Skill({ skill }: any) {
     OPQUAST: "OPQUAST",
     mongoDB: "MongoDB",
     mySQL: "MySQL",
+    firebase: "Firebase",
+    directus: "Directus",
+    cohere: "Cohere ai API",
+    imdb: "IMDb API",
+    nextauth: "Next-auth",
+    api: "External API",
   };
   const IconComponent = techIconMap[skill.skill];
   const IconLibelle = techLibeleMap[skill.skill];

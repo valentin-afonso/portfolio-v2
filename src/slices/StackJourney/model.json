@@ -67,7 +67,13 @@
                     "hono",
                     "OPQUAST",
                     "mongoDB",
-                    "mySQL"
+                    "mySQL",
+                    "firebase",
+                    "directus",
+                    "cohere",
+                    "imdb",
+                    "nextauth",
+                    "api"
                   ]
                 }
               }
@@ -129,7 +135,13 @@
                     "hono",
                     "OPQUAST",
                     "mongoDB",
-                    "mySQL"
+                    "mySQL",
+                    "firebase",
+                    "directus",
+                    "cohere",
+                    "imdb",
+                    "nextauth",
+                    "api"
                   ]
                 }
               }
@@ -191,7 +203,13 @@
                     "hono",
                     "OPQUAST",
                     "mongoDB",
-                    "mySQL"
+                    "mySQL",
+                    "firebase",
+                    "directus",
+                    "cohere",
+                    "imdb",
+                    "nextauth",
+                    "api"
                   ]
                 }
               }

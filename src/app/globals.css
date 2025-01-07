@@ -274,3 +274,6 @@ footer .socials svg {
   -ms-user-select: none;
   user-select: none;
 }
+.project p:not(.project_title) {
+  @apply text-xs text-black/65 dark:text-white/60;
+}
