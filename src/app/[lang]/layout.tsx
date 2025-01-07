@@ -8,10 +8,11 @@ import { ThemeProvider } from "@/app/theme-provider";
 
 type LayoutType = {
   children: React.ReactNode;
-  params: { lang: string };
+  params: any;
 };
 
-export default function RootLayout({ children, params }: LayoutType) {
+export default async function RootLayout({ children, params }: LayoutType) {
+  const { lang } = await params;
   return (
     <html
       lang="en"
@@ -25,7 +26,7 @@ export default function RootLayout({ children, params }: LayoutType) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header lang={params.lang} />
+          <Header lang={lang} />
           {children}
           <Footer />
         </ThemeProvider>
