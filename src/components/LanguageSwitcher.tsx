@@ -23,7 +23,7 @@ export const LanguageSwitcher = ({ locales }: LanguageSwitcherProps) => (
   <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outline" className="bg-background z-[1]">
           <Globe className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
