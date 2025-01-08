@@ -284,3 +284,6 @@ footer .socials svg {
 .project p:not(.project_title) {
   @apply text-xs text-black/65 dark:text-white/60;
 }
+.svg_career_arrow svg {
+  @apply stroke-white opacity-0 translate-y-1 group-hover/slide:opacity-100 group-hover/slide:translate-y-0 transition-all;
+}

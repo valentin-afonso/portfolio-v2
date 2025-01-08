@@ -21,8 +21,8 @@ export default function Language() {
         />
         <path
           d="M7.53608 10.875C6.38116 9.67939 5.45669 8.28099 4.80908 6.75"
-          stroke-Linecap="round"
-          stroke-Linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M9.375 13.5H14.625"
