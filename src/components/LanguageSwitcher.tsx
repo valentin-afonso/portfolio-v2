@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Language from "@/components/svg/Language";
 import { Check, ChevronDown, Globe } from "lucide-react";
 interface LanguageSwitcherProps {
   locales: {
@@ -23,8 +24,8 @@ export const LanguageSwitcher = ({ locales }: LanguageSwitcherProps) => (
   <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="bg-background z-[1]">
-          <Globe className="h-4 w-4" />
+        <Button variant="outline" className="bg-background z-[1] max-w-[45px]">
+          <Language />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-10">

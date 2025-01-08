@@ -11,7 +11,11 @@ export default function SocialsFooter({ slice }: any) {
       <ul className="flex items-center gap-8">
         {slice.primary.social.map((item: any) => (
           <li key={item.id}>
-            <Link href={item.link.url} target="_blank">
+            <Link
+              href={item.link.url}
+              target="_blank"
+              className="opacity-80 hover:opacity-100 transition-all"
+            >
               {item.id_social === "github" && <IconGithub />}
               {item.id_social === "linkedin" && <IconLinkedin />}
               {item.id_social === "x" && <IconX />}

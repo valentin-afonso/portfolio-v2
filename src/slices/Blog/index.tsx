@@ -3,6 +3,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import GridLayout from "@/components/GridLayout";
 import Link from "next/link";
 import BlocArticles from "@/components/BlocArticles";
+import ArrowUpRight from "@/components/svg/ArrowUpRight";
 /**
  * Props for `Blog`.
  */
@@ -25,8 +26,10 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
           <Link
             href="https://www.staytuneed.com/blog/author/valentin-afonso"
             target="_blank"
+            className="group flex items-center gap-2"
           >
             {slice.primary.link.text}
+            <ArrowUpRight />
           </Link>
         </div>
         <BlocArticles />

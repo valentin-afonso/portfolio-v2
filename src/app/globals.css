@@ -25,6 +25,10 @@
   scrollbar-color: hsl(var(--border-scrollbar)) transparent;
 }
 
+/*
+
+*/
+body[data-scroll-locked="1"] header,
 .with-scroll-bars-hidden {
   overflow: hidden !important;
   padding-right: 11px !important;
@@ -135,6 +139,9 @@ body[data-scroll-locked] {
 @layer base {
   * {
     @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;

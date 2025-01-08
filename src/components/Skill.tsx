@@ -40,6 +40,7 @@ import IconImdb from "@/components/svg/tech/IconImdb";
 import IconCohere from "@/components/svg/tech/IconCohere";
 import IconApi from "@/components/svg/tech/IconApi";
 import IconNextAuth from "@/components/svg/tech/IconNextAuth";
+import IconScss from "@/components/svg/tech/IconScss";
 
 type TechName = string;
 type TechLibelle = string;
@@ -88,6 +89,7 @@ export default function Skill({ skill }: any) {
     imdb: IconImdb,
     nextauth: IconNextAuth,
     api: IconApi,
+    scss: IconScss,
   };
   const techLibeleMap: Record<TechName, TechLibelle> = {
     react: "React",
@@ -128,10 +130,11 @@ export default function Skill({ skill }: any) {
     mySQL: "MySQL",
     firebase: "Firebase",
     directus: "Directus",
-    cohere: "Cohere ai API",
+    cohere: "Cohere AI",
     imdb: "IMDb API",
     nextauth: "Next-auth",
-    api: "External API",
+    api: "Ext. API",
+    scss: "scss",
   };
   const IconComponent = techIconMap[skill.skill];
   const IconLibelle = techLibeleMap[skill.skill];
@@ -139,7 +142,7 @@ export default function Skill({ skill }: any) {
   return (
     <li className="group relative h-max">
       {IconLibelle && (
-        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] w-full text-center transition-all ">
+        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] opacity-0 group-hover:opacity-100 w-full text-center transition-all ">
           {IconLibelle}
         </span>
       )}

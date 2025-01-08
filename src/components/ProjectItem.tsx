@@ -1,6 +1,7 @@
 import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
 import Skills from "@/components/Skills";
+import ArrowUpRight from "@/components/svg/ArrowUpRight";
 
 export default function ProjectItem({ slice }: any) {
   return (
@@ -11,11 +12,21 @@ export default function ProjectItem({ slice }: any) {
             {slice.primary.title}
           </p>
           <div className="flex gap-4">
-            <Link href={slice.primary.repo_git.url} target="_blank">
+            <Link
+              href={slice.primary.repo_git.url}
+              target="_blank"
+              className="group flex items-center gap-2 text-sm opacity-90 hover:opacity-100 transition-all"
+            >
               {slice.primary.repo_git.text}
+              <ArrowUpRight />
             </Link>
-            <Link href={slice.primary.url.url} target="_blank">
+            <Link
+              href={slice.primary.url.url}
+              target="_blank"
+              className="group flex items-center gap-2 text-sm  opacity-90 hover:opacity-100 transition-all"
+            >
               {slice.primary.url.text}
+              <ArrowUpRight />
             </Link>
           </div>
         </div>

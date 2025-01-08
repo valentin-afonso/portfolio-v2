@@ -99,7 +99,9 @@
                     "cohere",
                     "imdb",
                     "nextauth",
-                    "api"
+                    "api",
+                    "express",
+                    "scss"
                   ]
                 }
               }
