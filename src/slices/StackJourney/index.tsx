@@ -21,7 +21,7 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pb-4"
     >
       <GridLayout additional_class="">
         <div className={class_raw}>

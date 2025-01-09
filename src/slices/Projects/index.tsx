@@ -16,7 +16,8 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pt-24 pb-4"
+      id="projects"
     >
       <GridLayout>
         <PrismicRichText field={slice.primary.title} />

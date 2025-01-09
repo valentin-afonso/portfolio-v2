@@ -18,7 +18,8 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pt-24 pb-44"
+      id="blog"
     >
       <GridLayout>
         <div className="w-full items-center flex justify-between">

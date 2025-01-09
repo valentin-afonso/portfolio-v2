@@ -440,6 +440,14 @@ export interface CarrerSliceDefaultPrimarySkillsItem {
     | "OPQUAST"
     | "mongoDB"
     | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
   >;
 }
 
@@ -917,7 +925,7 @@ export interface NavigationItemSliceDefaultPrimary {
    * - **API ID Path**: navigation_item.default.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.Repeatable<prismic.LinkField>;
+  link: prismic.LinkField;
 }
 
 /**
@@ -962,7 +970,51 @@ export interface ProjectSliceDefaultPrimarySkillsItem {
    * - **API ID Path**: project.default.primary.skills[].skill
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  skill: prismic.SelectField<"1" | "2">;
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
+  >;
 }
 
 /**
@@ -1293,6 +1345,14 @@ export interface StackJourneySliceDefaultPrimarySkillsItem {
     | "OPQUAST"
     | "mongoDB"
     | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
   >;
 }
 
@@ -1344,6 +1404,14 @@ export interface StackJourneySliceDefaultPrimarySkillsNextItem {
     | "OPQUAST"
     | "mongoDB"
     | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
   >;
 }
 
@@ -1395,6 +1463,14 @@ export interface StackJourneySliceDefaultPrimarySkillsOtherItem {
     | "OPQUAST"
     | "mongoDB"
     | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
   >;
 }
 

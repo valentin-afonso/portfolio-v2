@@ -7,7 +7,7 @@ export default function Close() {
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-width="1"
+        strokeWidth="1"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         className="stroke-black dark:stroke-white w-9 h-auto opacity-70 hover:opacity-100 transition-all"

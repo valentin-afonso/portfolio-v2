@@ -16,7 +16,8 @@ const CareerSection = ({ slice }: CareerSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pt-24 pb-24"
+      id="career"
     >
       <GridLayout additional_class="overflow-visible">
         <PrismicRichText field={slice.primary.title} />

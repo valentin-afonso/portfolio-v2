@@ -1,5 +1,4 @@
 import SvgWave from "@/components/svg/SvgWave";
-import { Button } from "./ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -32,13 +31,17 @@ export default function SlideCareer({ children, slice }: SlideType) {
             {children}
           </div>
         </DrawerTrigger>
-        <DrawerContent className="dark:bg-secondary mb-4">
-          <div className="flex gap-4 w-full">
-            <div className="p-8 border-r border-border dark:border-white/15">
+        <DrawerContent className="dark:bg-secondary mb-4 dark:border-white/15">
+          <div className="flex gap-4 w-full border-t border-b border-border/50 dark:border-white/15 ">
+            <div className="relative p-8 pb-16 border-r border-border/50 dark:border-white/15 ">
+              <div className="absolute left-0 top-0 w-1/2 h-full border-r border-border/20 dark:border-white/15 overflow-hidden">
+                <SvgWave additional_class="absolute top-[-7rem] left-[-4rem] w-[510px] h-auto" />
+              </div>
+
               <p className="text-black/75 dark:text-white/75 font-bold text-xl">
                 {slice.primary.date}
               </p>
-              <DrawerTitle className="font-bold text-3xl">
+              <DrawerTitle className="font-bold text-3xl mb-2">
                 {slice.primary.job_title}
               </DrawerTitle>
 

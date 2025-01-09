@@ -18,7 +18,8 @@ const DegreeSection = ({ slice }: DegreeSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44"
+      className="pt-24"
+      id="degree"
     >
       <GridLayout>
         <PrismicRichText field={slice.primary.title} />

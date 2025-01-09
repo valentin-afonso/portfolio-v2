@@ -4,19 +4,13 @@
 		"variation": "default",
 		"primary": {
 			"link": {
-				"__TYPE__": "RepeatableContent",
-				"type": "Link",
-				"value": [
-					{
-						"__TYPE__": "LinkContent",
-						"key": "4f65554a-49f9-4102-933a-e53c5ad0b0ba",
-						"value": {
-							"__TYPE__": "ExternalLink",
-							"url": "http://twitter.com",
-							"text": "setting"
-						}
-					}
-				]
+				"key": "c697ba62-67c8-472d-bc1c-84f60d62695b",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "lie"
+				}
 			}
 		},
 		"items": []
