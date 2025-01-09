@@ -2,10 +2,11 @@ import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
 import Skills from "@/components/Skills";
 import ArrowUpRight from "@/components/svg/ArrowUpRight";
+import ProjectTrigger from "@/components/ProjectTrigger";
 
 export default function ProjectItem({ slice }: any) {
   return (
-    <div className="project bg-secondary rounded-xl border border-border/25 dark:border-transparent">
+    <ProjectTrigger slice={slice}>
       <div className="flex flex-col gap-4 p-6 w-[577px]">
         <div className="flex justify-between items-center pb-4">
           <p className="project_title font-bold text-xl">
@@ -33,6 +34,6 @@ export default function ProjectItem({ slice }: any) {
         <PrismicRichText field={slice.primary.description} />
         <Skills skills={slice.primary.skills} isLight />
       </div>
-    </div>
+    </ProjectTrigger>
   );
 }
