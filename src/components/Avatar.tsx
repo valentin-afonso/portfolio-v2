@@ -13,7 +13,7 @@ export default function Avatar({ img }: any) {
           width={75}
           height={112}
           alt={`${img.alt}`}
-          className="absolute max-w-none left-[-12px] top-[-3px]"
+          className="absolute max-w-none left-[-12px] top-[-3px] dark:brightness-90"
         />
       </div>
     </div>
