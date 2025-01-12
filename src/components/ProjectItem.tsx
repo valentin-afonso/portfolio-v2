@@ -5,9 +5,13 @@ import ArrowUpRight from "@/components/svg/ArrowUpRight";
 import ProjectTrigger from "@/components/ProjectTrigger";
 
 export default function ProjectItem({ slice }: any) {
+  const arr_skills = slice.primary.skills;
+  const is_to_long = arr_skills.length > 5;
+  const count = arr_skills.length - 5;
+  const first_skills = is_to_long ? arr_skills.slice(0, 5) : arr_skills;
   return (
     <ProjectTrigger slice={slice}>
-      <div className="flex flex-col gap-4 p-6 w-[577px]">
+      <div className="flex flex-col gap-4 p-6 w-[577px] h-full">
         <div className="flex justify-between items-center pb-4">
           <p className="project_title font-bold text-xl">
             {slice.primary.title}
@@ -32,8 +36,12 @@ export default function ProjectItem({ slice }: any) {
           </div>
         </div>
         <PrismicRichText field={slice.primary.description} />
-        <Skills skills={slice.primary.skills} isLight />
+        <div className="flex items-center gap-4 mt-auto">
+          <Skills skills={first_skills} isLight />
+          {is_to_long && <p className="font-black">+{count}</p>}
+        </div>
       </div>
+      <div className="bg-slate-300 h-full w-[555px]"></div>
     </ProjectTrigger>
   );
 }

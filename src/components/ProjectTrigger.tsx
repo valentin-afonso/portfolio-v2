@@ -21,7 +21,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
     <>
       <Drawer>
         <DrawerTrigger
-          className="project bg-secondary rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 cursor-pointer"
+          className="project h-[326px] bg-secondary flex rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 overflow-hidden cursor-pointer"
           asChild
         >
           <div>{children}</div>
