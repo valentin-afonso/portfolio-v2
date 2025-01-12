@@ -5,6 +5,7 @@ import IconGithub from "@/components/svg/socials/IconGithub";
 import IconLeetcode from "@/components/svg/socials/IconLeetcode";
 import IconExternLink from "@/components/svg/IconExternLink";
 import LeetcodeCounter from "@/components/LeetcodeCounter";
+import GithubCounter from "@/components/GithubCounter";
 import SvgWave from "@/components/svg/SvgWave";
 import SkeletonLeetcode from "./SkeletonLeetcode";
 import { Suspense } from "react";
@@ -28,10 +29,12 @@ export default function SocialHeroLink({ social }: any) {
       <Link
         href={social.link.url}
         target="_blank"
-        className="relative w-40 h-32 p-3 flex flex-col justify-between border border-border rounded-xl overflow-hidden"
+        className="relative group/herolink w-40 h-32 p-3 flex flex-col justify-between border border-border rounded-xl overflow-hidden"
       >
         <SvgWave additional_class="absolute top-[-7rem] left-[-5rem]" />
         {icon}
+        {social.id_social === "github" && <GithubCounter />}
+
         {social.id_social === "leetcode" && (
           <Suspense fallback={<SkeletonLeetcode />}>
             <LeetcodeCounter />

@@ -292,3 +292,7 @@ footer .socials svg {
   @apply grid;
   grid-template-columns: repeat(4, auto);
 }
+.blurry_link {
+  background-color: #ffffff3b;
+  backdrop-filter: blur(7px);
+}
