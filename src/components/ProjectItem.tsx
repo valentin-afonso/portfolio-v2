@@ -41,7 +41,7 @@ export default function ProjectItem({ slice }: any) {
           {is_to_long && <p className="font-black">+{count}</p>}
         </div>
       </div>
-      <div className="bg-slate-300 h-full w-[555px]"></div>
+      <div className="bg-slate-300 dark:bg-white/10 h-full w-[555px]"></div>
     </ProjectTrigger>
   );
 }

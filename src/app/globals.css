@@ -155,7 +155,7 @@ body[data-scroll-locked] {
 }
 
 .bg_blur {
-  @apply bg-background/20 backdrop-blur-[14px];
+  @apply bg-background/60 backdrop-blur-[28px];
 }
 .bg_gradient_colorfull {
   background: linear-gradient(
@@ -295,4 +295,51 @@ footer .socials svg {
 .blurry_link {
   background-color: #ffffff3b;
   backdrop-filter: blur(7px);
+}
+.dark .blurry_link {
+  @apply bg-black/30;
+}
+
+.centered_line {
+  @apply pointer-events-none left-1/2 -translate-x-1/2;
+}
+.bg_h_line {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(0, 0, 0, 0.12) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.bg_v_line {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.12) 35%,
+    rgba(0, 0, 0, 0.12) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.dark .bg_h_line {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 45%,
+    rgba(255, 255, 255, 0.12) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.dark .bg_v_line {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 35%,
+    rgba(255, 255, 255, 0.12) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }

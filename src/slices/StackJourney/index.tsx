@@ -23,7 +23,12 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="pb-4"
     >
-      <GridLayout additional_class="">
+      <GridLayout additional_class="relative">
+        <div className="absolute top-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute top-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+
+        <div className="absolute top-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute top-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
         <div className={class_raw}>
           <div className={class_container_text}>
             <PrismicRichText field={slice.primary.favorite_stack} />
@@ -51,6 +56,11 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
             <Skills skills={slice.primary.skills_other} isLight />
           </div>
         </div>
+        <div className="absolute bottom-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute bottom-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+
+        <div className="absolute bottom-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute bottom-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
       </GridLayout>
     </section>
   );

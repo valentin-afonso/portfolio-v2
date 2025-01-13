@@ -2,6 +2,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import GridLayout from "@/components/GridLayout";
 import BlocCareers from "@/components/BlocCareers";
+import LinesPlus from "@/components/LinesPlus";
 /**
  * Props for `CareerSection`.
  */
@@ -19,10 +20,11 @@ const CareerSection = ({ slice }: CareerSectionProps): JSX.Element => {
       className="pt-24 pb-24"
       id="career"
     >
-      <GridLayout additional_class="overflow-visible">
+      <GridLayout additional_class="relative overflow-visible">
         <PrismicRichText field={slice.primary.title} />
-
+        <LinesPlus position="top" />
         <BlocCareers />
+        <LinesPlus position="bottom" />
       </GridLayout>
     </section>
   );

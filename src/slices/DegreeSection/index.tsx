@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import GridLayout from "@/components/GridLayout";
-import BlocCareers from "@/components/BlocCareers";
+import LinesPlus from "@/components/LinesPlus";
 import BlocDegree from "@/components/BlocDegree";
 
 /**
@@ -21,9 +21,11 @@ const DegreeSection = ({ slice }: DegreeSectionProps): JSX.Element => {
       className="pt-24"
       id="degree"
     >
-      <GridLayout>
+      <GridLayout additional_class="relative">
+        <LinesPlus position="top" />
         <PrismicRichText field={slice.primary.title} />
         <BlocDegree />
+        <LinesPlus position="bottom" />
       </GridLayout>
     </section>
   );
