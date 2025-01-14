@@ -19,9 +19,10 @@ const Projects = ({ slice }: ProjectsProps): JSX.Element => {
       className="pt-24 pb-4"
       id="projects"
     >
-      <GridLayout>
+      <GridLayout additional_class="relative">
         <PrismicRichText field={slice.primary.title} />
         <BlocProjects />
+        <div className="absolute bottom-[-40px] left-0 w-full h-[1px] bg_h_line"></div>
       </GridLayout>
     </section>
   );

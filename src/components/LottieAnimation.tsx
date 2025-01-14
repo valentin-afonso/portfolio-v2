@@ -13,7 +13,6 @@ const LottieComponent: React.FC<LottieComponentProps> = ({
   height = 400,
   width = 40,
 }) => {
-  console.log("Chemin du fichier JSON:", "/fire-animation.json");
   return <Player autoplay loop src={animationPath} className="w-10 h-10" />;
 };
 

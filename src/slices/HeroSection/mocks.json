@@ -59,13 +59,67 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "4a9f45ed-6615-4d93-93bb-143674f0d021",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",
 										"text": "cloth"
 									}
+								}
+							],
+							[
+								"counter",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "various",
+									"type": "Text"
+								}
+							],
+							[
+								"title_popup",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "garage",
+									"type": "Text"
+								}
+							],
+							[
+								"desc_popup",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Deserunt duis veniam cillum adipisicing exercitation in labore quis reprehenderit eiusmod fugiat sunt qui. Fugiat laboris adipisicing non aliqua minim exercitation aliqua aute aliquip aliqua officia sit. Aute officia fugiat consectetur qui deserunt est non ad."
+											}
+										}
+									]
+								}
+							],
+							[
+								"qrcode",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+										"width": 12288,
+										"height": 16384
+									},
+									"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+									"width": 12288,
+									"height": 16384,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"thumbnails": {}
 								}
 							]
 						]

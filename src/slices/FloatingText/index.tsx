@@ -15,10 +15,20 @@ const FloatingText = ({ slice }: FloatingTextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-44 text-center text-3xl"
+      className="pb-64 text-center text-3xl"
     >
-      <GridLayout>
+      <GridLayout additional_class="relative py-16">
+        <div className="absolute top-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute top-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+
+        <div className="absolute top-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute top-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
         <PrismicRichText field={slice.primary.text} />
+        <div className="absolute bottom-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute bottom-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+
+        <div className="absolute bottom-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="absolute bottom-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
       </GridLayout>
     </section>
   );

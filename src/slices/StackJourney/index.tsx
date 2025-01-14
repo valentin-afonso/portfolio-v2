@@ -34,13 +34,13 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
             <PrismicRichText field={slice.primary.favorite_stack} />
           </div>
           <div className={class_container_skills}>
-            <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
+            <SvgWave additional_class="absolute top-[-16.5rem] left-[-12rem] w-[956px] h-auto rotate-[66deg]" />
             <Skills skills={slice.primary.skills} isLight />
           </div>
         </div>
         <div className={class_raw}>
           <div className={class_container_skills}>
-            <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
+            <SvgWave additional_class="absolute top-[-16.5rem] left-[-12rem] w-[956px] h-auto rotate-[66deg]" />
             <Skills skills={slice.primary.skills_next} isLight />
           </div>
           <div className={`pl-8 ${class_container_text}`}>
@@ -52,7 +52,7 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
             <PrismicRichText field={slice.primary.other} />
           </div>
           <div className={class_container_skills}>
-            <SvgWave additional_class="absolute top-[-10.5rem] left-[-11rem] w-[890px] h-auto rotate-[66deg]" />
+            <SvgWave additional_class="absolute top-[-16.5rem] left-[-12rem] w-[956px] h-auto rotate-[66deg]" />
             <Skills skills={slice.primary.skills_other} isLight />
           </div>
         </div>

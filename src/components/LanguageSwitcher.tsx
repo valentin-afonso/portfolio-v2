@@ -24,7 +24,11 @@ export const LanguageSwitcher = ({ locales }: LanguageSwitcherProps) => (
   <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="bg-background z-[1] max-w-[45px]">
+        <Button
+          variant="outline"
+          className="bg-background z-[1] max-w-[45px]"
+          aria-label="switch language"
+        >
           <Language />
         </Button>
       </DropdownMenuTrigger>

@@ -764,6 +764,46 @@ export interface HeroSectionSliceDefaultPrimarySocialsItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * counter field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].counter
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  counter: prismic.KeyTextField;
+
+  /**
+   * title popup field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].title_popup
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title_popup: prismic.KeyTextField;
+
+  /**
+   * desc popup field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].desc_popup
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  desc_popup: prismic.RichTextField;
+
+  /**
+   * qrcode field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].qrcode
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  qrcode: prismic.ImageField<never>;
 }
 
 /**

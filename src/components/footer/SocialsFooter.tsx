@@ -15,6 +15,7 @@ export default function SocialsFooter({ slice }: any) {
               href={item.link.url}
               target="_blank"
               className="opacity-80 hover:opacity-100 transition-all"
+              aria-label={item.id_social}
             >
               {item.id_social === "github" && <IconGithub />}
               {item.id_social === "linkedin" && <IconLinkedin />}

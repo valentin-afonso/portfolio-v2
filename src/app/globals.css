@@ -343,3 +343,7 @@ footer .socials svg {
     rgba(255, 255, 255, 0) 100%
   );
 }
+/*floating_text*/
+section[data-slice-type="floating_text"] p {
+  @apply leading-loose;
+}

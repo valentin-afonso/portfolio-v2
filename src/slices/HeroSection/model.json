@@ -65,6 +65,37 @@
                   "allowText": true,
                   "repeat": false
                 }
+              },
+              "counter": {
+                "type": "Text",
+                "config": {
+                  "label": "counter",
+                  "placeholder": ""
+                }
+              },
+              "title_popup": {
+                "type": "Text",
+                "config": {
+                  "label": "title popup",
+                  "placeholder": ""
+                }
+              },
+              "desc_popup": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "desc popup",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "qrcode": {
+                "type": "Image",
+                "config": {
+                  "label": "qrcode",
+                  "constraint": {},
+                  "thumbnails": []
+                }
               }
             }
           }

@@ -1,6 +1,6 @@
 import LottieAnimation from "./LottieAnimation";
 
-export default async function LeetcodeCounter() {
+export default async function LeetcodeCounter({ counter }: any) {
   /*
   const data = await fetch(
     "https://leetcode-api-faisalshohag.vercel.app/valafso"
@@ -15,7 +15,7 @@ export default async function LeetcodeCounter() {
       <div className="flex flex-col gap-1 mt-[-16px]">
         <div className="flex items-center justify-center ml-[-6px]">
           <LottieAnimation animationPath="/lottie/fire-animation.json" />
-          <span className="text-lg font-bold mb-[-16px]">35</span>
+          <span className="text-lg font-bold mb-[-16px]">+{counter}</span>
         </div>
         <span className="text-xs text-black/60 dark:text-white/60">
           problems solved
