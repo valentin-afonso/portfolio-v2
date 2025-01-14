@@ -27,7 +27,6 @@ export default function SocialHeroLink({ social }: any) {
   };
   const icon = getIcon();
   if (social.id_social === "resume") {
-    console.log(social);
     return (
       <LinkResume social={social}>
         <SvgWave additional_class="absolute top-[-7rem] left-[-5rem]" />
