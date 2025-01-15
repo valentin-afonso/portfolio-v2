@@ -788,12 +788,12 @@ export interface HeroSectionSliceDefaultPrimarySocialsItem {
   /**
    * desc popup field in *HeroSection → Default → Primary → socials*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero_section.default.primary.socials[].desc_popup
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  desc_popup: prismic.RichTextField;
+  desc_popup: prismic.KeyTextField;
 
   /**
    * qrcode field in *HeroSection → Default → Primary → socials*
@@ -804,6 +804,16 @@ export interface HeroSectionSliceDefaultPrimarySocialsItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   qrcode: prismic.ImageField<never>;
+
+  /**
+   * Image resume field in *HeroSection → Default → Primary → socials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.socials[].image_resume
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_resume: prismic.ImageField<never>;
 }
 
 /**

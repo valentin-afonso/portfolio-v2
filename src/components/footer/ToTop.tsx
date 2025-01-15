@@ -8,7 +8,11 @@ export default function ToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   return (
-    <button className="group absolute top-7 right-7" onClick={scrollToTop}>
+    <button
+      className="group absolute top-7 right-7"
+      onClick={scrollToTop}
+      aria-label="scroll to top"
+    >
       <svg
         width="52"
         height="52"

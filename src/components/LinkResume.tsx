@@ -8,9 +8,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 import Image from "next/image";
+import Link from "next/link";
 
 type Type = {
   children: React.ReactNode;
@@ -23,29 +23,35 @@ export default function LinkResume({ children, social }: Type) {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <div className="relative group/herolink w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl overflow-hidden">
+          <div className="relative group/herolink w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl cursor-pointer overflow-hidden">
             {children}
           </div>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>{social.title_popup}</DialogTitle>
-            <DialogDescription>
-              <PrismicRichText field={social.desc_popup} />
-            </DialogDescription>
+            <DialogDescription>{social.desc_popup}</DialogDescription>
           </DialogHeader>
           <div className="flex">
             <div className="w-1/2 p-4">
               <Image
                 src={`${social.qrcode.url}`}
-                width={75}
-                height={112}
+                width={500}
+                height={500}
                 alt={`${social.qrcode.alt}`}
                 className="dark:brightness-90"
               />
             </div>
-            <div className="w-1/2 p-4">
-              <PrismicNextLink field={social.link} />
+            <div className="w-1/2 p-4 h-56 rounded-xl overflow-hidden">
+              <Link href={social.link.url} target="_blank">
+                <Image
+                  src={`${social.image_resume.url}`}
+                  width={500}
+                  height={500}
+                  alt={`${social.image_resume.alt}`}
+                  className="dark:brightness-90 h-full object-cover"
+                />
+              </Link>
             </div>
           </div>
         </DialogContent>
