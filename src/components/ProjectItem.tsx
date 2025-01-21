@@ -45,16 +45,16 @@ export default function ProjectItem({ slice }: any) {
         </div>
       </div>
       <div
-        className={`relative bg-slate-300 dark:bg-white/10 h-full w-[555px] overflow-hidden ${slice.primary.custom_class}`}
+        className={`relative  h-full w-[555px] overflow-hidden ${slice.primary.custom_class}`}
       >
         {slice.primary.images?.map((item: any) => (
           <Image
             key={item.image.id}
             src={`${item.image.url}`}
-            width={552}
-            height={324}
+            width={1080}
+            height={1860}
             alt={`${item.image.alt}`}
-            className="absolute max-w-none right-[-5rem] top-[-3px] dark:brightness-90"
+            className="absolute max-w-none dark:brightness-90 w-[700px] h-auto"
           />
         ))}
       </div>

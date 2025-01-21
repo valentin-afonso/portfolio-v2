@@ -347,3 +347,26 @@ footer .socials svg {
 section[data-slice-type="floating_text"] p {
   @apply leading-loose;
 }
+
+/*PROJECT*/
+.staytuneed img {
+  @apply right-[-5rem] top-[-3rem];
+}
+.cadena img {
+  @apply right-[-6rem] top-[-5rem];
+}
+.mindcheck img {
+  @apply right-[-5rem] bottom-[-9rem];
+}
+.netflix img {
+  @apply right-[-24rem] bottom-[-12rem] w-[1080px];
+}
+.portfolio img {
+  @apply right-[-8rem] top-[-2rem];
+}
+.swalkers img {
+  @apply right-[-15rem] top-[-1rem];
+}
+.indys img {
+  @apply right-[-3rem] top-[-8rem]  w-[500px];
+}
