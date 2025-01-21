@@ -3,12 +3,15 @@ import Link from "next/link";
 import Skills from "@/components/Skills";
 import ArrowUpRight from "@/components/svg/ArrowUpRight";
 import ProjectTrigger from "@/components/ProjectTrigger";
+import Image from "next/image";
 
 export default function ProjectItem({ slice }: any) {
   const arr_skills = slice.primary.skills;
   const is_to_long = arr_skills.length > 5;
   const count = arr_skills.length - 5;
   const first_skills = is_to_long ? arr_skills.slice(0, 5) : arr_skills;
+  const image_exist = slice.primary.images.length > 0;
+  if (!image_exist) return null;
   return (
     <ProjectTrigger slice={slice}>
       <div className="flex flex-col gap-4 p-6 w-[577px] h-full">
@@ -41,7 +44,20 @@ export default function ProjectItem({ slice }: any) {
           {is_to_long && <p className="font-black">+{count}</p>}
         </div>
       </div>
-      <div className="bg-slate-300 dark:bg-white/10 h-full w-[555px]"></div>
+      <div
+        className={`relative bg-slate-300 dark:bg-white/10 h-full w-[555px] overflow-hidden ${slice.primary.custom_class}`}
+      >
+        {slice.primary.images?.map((item: any) => (
+          <Image
+            key={item.image.id}
+            src={`${item.image.url}`}
+            width={552}
+            height={324}
+            alt={`${item.image.alt}`}
+            className="absolute max-w-none right-[-5rem] top-[-3px] dark:brightness-90"
+          />
+        ))}
+      </div>
     </ProjectTrigger>
   );
 }

@@ -39,17 +39,21 @@ export default function LinkResume({ children, social }: Type) {
                 width={500}
                 height={500}
                 alt={`${social.qrcode.alt}`}
-                className="dark:brightness-90"
+                className="dark:brightness-90 rounded-xl overflow-hidden"
               />
             </div>
-            <div className="w-1/2 p-4 h-56 rounded-xl overflow-hidden">
-              <Link href={social.link.url} target="_blank">
+            <div className="w-1/2 p-4 h-56 ">
+              <Link
+                href={social.link.url}
+                target="_blank"
+                className="rounded-xl overflow-hidden"
+              >
                 <Image
                   src={`${social.image_resume.url}`}
                   width={500}
                   height={500}
                   alt={`${social.image_resume.alt}`}
-                  className="dark:brightness-90 h-full object-cover"
+                  className="dark:brightness-90 h-full object-cover rounded-xl overflow-hidden"
                 />
               </Link>
             </div>

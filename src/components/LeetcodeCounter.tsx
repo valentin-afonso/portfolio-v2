@@ -1,4 +1,5 @@
 import LottieAnimation from "./LottieAnimation";
+// import NumberFlow from "@number-flow/react";
 
 export default async function LeetcodeCounter({ counter }: any) {
   /*
@@ -16,6 +17,7 @@ export default async function LeetcodeCounter({ counter }: any) {
         <div className="flex items-center justify-center ml-[-6px]">
           <LottieAnimation animationPath="/lottie/fire-animation.json" />
           <span className="text-lg font-bold mb-[-16px]">+{counter}</span>
+          {/*<NumberFlow value={123} /> **/}
         </div>
         <span className="text-xs text-black/60 dark:text-white/60">
           problems solved

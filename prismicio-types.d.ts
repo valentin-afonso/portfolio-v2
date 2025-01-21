@@ -1097,6 +1097,16 @@ export interface ProjectSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
+   * custom class field in *Project → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.default.primary.custom_class
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  custom_class: prismic.KeyTextField;
+
+  /**
    * Description field in *Project → Default → Primary*
    *
    * - **Field Type**: Rich Text

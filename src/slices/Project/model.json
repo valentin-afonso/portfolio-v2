@@ -19,6 +19,13 @@
             "placeholder": ""
           }
         },
+        "custom_class": {
+          "type": "Text",
+          "config": {
+            "label": "custom class",
+            "placeholder": ""
+          }
+        },
         "description": {
           "type": "StructuredText",
           "config": {
