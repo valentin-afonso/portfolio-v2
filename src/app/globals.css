@@ -349,23 +349,65 @@ section[data-slice-type="floating_text"] p {
 }
 
 /*PROJECT*/
+.staytuneed img,
+.cadena img,
+.mindcheck img,
+.netflix img,
+.portfolio img {
+  @apply right-[-5rem] bottom-[-9rem];
+  z-index: 1;
+}
+.staytuneed img:nth-child(2),
+.netflix img:nth-child(2),
+.mindcheck img:nth-child(2) {
+  @apply z-0 opacity-50;
+}
+
+.staytuneed img:nth-child(2) {
+  @apply right-[-2rem] bottom-[-10rem];
+}
+.netflix img:nth-child(2) {
+  @apply right-[-16rem] bottom-[-7rem] w-[800px];
+}
+
+.mindcheck img:nth-child(2) {
+  @apply right-[-3rem] bottom-[10rem] w-[500px];
+}
+
+.project img {
+  transition: transform 0.3s ease-in-out;
+}
+.project:hover img:nth-child(1) {
+  transform: translate(-14px, -14px);
+}
+.project:hover .staytuneed img:nth-child(2) {
+  transform: translate(-28px, 28px);
+}
+.project:hover .netflix img:nth-child(2) {
+  transform: translate(18px, -12px);
+}
+.project:hover .mindcheck img:nth-child(2) {
+  transform: translate(-28px, 58px);
+}
+/*
 .staytuneed img {
-  @apply right-[-5rem] top-[-3rem];
+  
 }
 .cadena img {
-  @apply right-[-6rem] top-[-5rem];
+  
 }
 .mindcheck img {
-  @apply right-[-5rem] bottom-[-9rem];
+  
 }
 .netflix img {
-  @apply right-[-24rem] bottom-[-12rem] w-[1080px];
+  
 }
 .portfolio img {
-  @apply right-[-8rem] top-[-2rem];
+  
 }
+*/
 .swalkers img {
-  @apply right-[-15rem] top-[-1rem];
+  @apply right-[-15rem] top-[-1rem] w-[700px];
 }
 .indys img {
   @apply right-[-3rem] top-[-8rem]  w-[500px];

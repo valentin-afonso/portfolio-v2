@@ -54,7 +54,7 @@ export default function ProjectItem({ slice }: any) {
             width={1080}
             height={1860}
             alt={`${item.image.alt}`}
-            className="absolute max-w-none dark:brightness-90 w-[700px] h-auto"
+            className="absolute max-w-none dark:brightness-90 w-[600px] h-auto"
           />
         ))}
       </div>
