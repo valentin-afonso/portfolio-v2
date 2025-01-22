@@ -359,8 +359,9 @@ section[data-slice-type="floating_text"] p {
 }
 .staytuneed img:nth-child(2),
 .netflix img:nth-child(2),
-.mindcheck img:nth-child(2) {
-  @apply z-0 opacity-50;
+.mindcheck img:nth-child(2),
+.portfolio img:nth-child(2) {
+  @apply z-0 dark:opacity-50 dark:brightness-100 brightness-90;
 }
 
 .staytuneed img:nth-child(2) {
@@ -373,7 +374,9 @@ section[data-slice-type="floating_text"] p {
 .mindcheck img:nth-child(2) {
   @apply right-[-3rem] bottom-[10rem] w-[500px];
 }
-
+.portfolio img:nth-child(2) {
+  @apply right-[-7rem] bottom-[-8rem] w-[700px];
+}
 .project img {
   transition: transform 0.3s ease-in-out;
 }
@@ -388,6 +391,9 @@ section[data-slice-type="floating_text"] p {
 }
 .project:hover .mindcheck img:nth-child(2) {
   transform: translate(-28px, 58px);
+}
+.project:hover .portfolio img:nth-child(2) {
+  transform: translate(12px, -60px);
 }
 /*
 .staytuneed img {
