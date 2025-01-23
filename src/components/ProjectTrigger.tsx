@@ -8,6 +8,7 @@ import {
 import Skills from "@/components/Skills";
 import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
+import Image from "next/image";
 
 import ArrowUpRight from "@/components/svg/ArrowUpRight";
 
@@ -28,7 +29,20 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
         </DrawerTrigger>
         <DrawerContent className="drawer_project dark:bg-secondary mb-4 dark:border-white/15">
           <div className="flex w-full border-t border-b border-border/50 dark:border-white/15 ">
-            <div className="min-w-96 bg-gray-50 dark:bg-white/15"></div>
+            <div
+              className={`drawer_image relative min-w-96  overflow-hidden ${slice.primary.custom_class}`}
+            >
+              {slice.primary.images?.map((item: any) => (
+                <Image
+                  key={item.image.id}
+                  src={`${item.image.url}`}
+                  width={1080}
+                  height={1860}
+                  alt={`${item.image.alt}`}
+                  className="absolute max-w-none dark:brightness-90 w-[700px] h-auto"
+                />
+              ))}
+            </div>
             <div className="px-4 py-8 shrink border-r border-border/50 dark:border-white/15">
               <DrawerTitle className="project_title font-bold text-xl mb-4">
                 {slice.primary.title}

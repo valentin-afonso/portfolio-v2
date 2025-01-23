@@ -292,6 +292,9 @@ footer .socials svg {
   @apply grid;
   grid-template-columns: repeat(4, auto);
 }
+.drawer_project p {
+  @apply opacity-65;
+}
 .blurry_link {
   background-color: #ffffff3b;
   backdrop-filter: blur(7px);
@@ -354,15 +357,26 @@ section[data-slice-type="floating_text"] p {
 .mindcheck img,
 .netflix img,
 .portfolio img {
-  @apply right-[-5rem] bottom-[-9rem];
+  @apply right-[-5rem] bottom-[-9rem] brightness-95;
+  z-index: 1;
+}
+
+.indys img {
+  @apply right-[-3rem] top-[-8rem]  w-[500px];
+  z-index: 1;
+}
+.swalkers img {
+  @apply right-[-17rem] bottom-[-18rem] w-[800px] brightness-95;
   z-index: 1;
 }
 .staytuneed img:nth-child(2),
 .netflix img:nth-child(2),
 .mindcheck img:nth-child(2),
 .portfolio img:nth-child(2),
-.cadena img:nth-child(2) {
-  @apply z-0 dark:opacity-50 dark:brightness-100 brightness-90;
+.cadena img:nth-child(2),
+.indys img:nth-child(2),
+.swalkers img:nth-child(2) {
+  @apply z-0 opacity-0 dark:opacity-20 dark:brightness-100 brightness-90;
 }
 
 .staytuneed img:nth-child(2) {
@@ -380,6 +394,15 @@ section[data-slice-type="floating_text"] p {
 }
 .cadena img:nth-child(2) {
   @apply right-[-7rem] bottom-[-4rem] w-[700px];
+}
+.indys img:nth-child(2) {
+  @apply left-[4rem] top-[1rem] w-[200px];
+}
+.staytuneed img:nth-child(2) {
+  @apply right-[-1rem] bottom-[-10rem];
+}
+.swalkers img:nth-child(2) {
+  @apply right-[-15rem] top-[-1rem] w-[700px];
 }
 .project img {
   transition: transform 0.3s ease-in-out;
@@ -402,26 +425,19 @@ section[data-slice-type="floating_text"] p {
 .project:hover .cadena img:nth-child(2) {
   transform: translate(12px, 12px);
 }
-/*
-.staytuneed img {
-  
+.project:hover .indys img:nth-child(2) {
+  transform: translate(12px, 12px);
 }
-.cadena img {
-  
+.project:hover .swalkers img:nth-child(2) {
+  transform: translate(-40px, 0px);
 }
-.mindcheck img {
-  
+
+.drawer_image img:nth-child(1) {
+  @apply right-[-14rem] bottom-[-9rem];
 }
-.netflix img {
-  
+.drawer_image.swalkers img:nth-child(1) {
+  @apply right-[-16rem] bottom-[-20rem];
 }
-.portfolio img {
-  
-}
-*/
-.swalkers img {
-  @apply right-[-15rem] top-[-1rem] w-[700px];
-}
-.indys img {
-  @apply right-[-3rem] top-[-8rem]  w-[500px];
+.drawer_image.indys img:nth-child(1) {
+  @apply right-[-6rem] bottom-[-20rem];
 }
