@@ -30,7 +30,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
         <DrawerContent className="drawer_project dark:bg-secondary mb-4 dark:border-white/15">
           <div className="flex w-full border-t border-b border-border/50 dark:border-white/15 ">
             <div
-              className={`drawer_image relative min-w-96  overflow-hidden ${slice.primary.custom_class}`}
+              className={`drawer_image relative min-w-96 min-h-64 border-r border-border/50 dark:border-white/15 overflow-hidden ${slice.primary.custom_class}`}
             >
               {slice.primary.images?.map((item: any) => (
                 <Image
@@ -43,7 +43,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
                 />
               ))}
             </div>
-            <div className="px-4 py-8 shrink border-r border-border/50 dark:border-white/15">
+            <div className="px-8 py-8 shrink border-r border-border/50 dark:border-white/15">
               <DrawerTitle className="project_title font-bold text-xl mb-4">
                 {slice.primary.title}
               </DrawerTitle>

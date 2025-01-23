@@ -4,6 +4,7 @@ import Skills from "@/components/Skills";
 import ArrowUpRight from "@/components/svg/ArrowUpRight";
 import ProjectTrigger from "@/components/ProjectTrigger";
 import Image from "next/image";
+import { PrismicNextImage } from "@prismicio/next";
 
 export default function ProjectItem({ slice }: any) {
   const arr_skills = slice.primary.skills;
@@ -51,8 +52,8 @@ export default function ProjectItem({ slice }: any) {
           <Image
             key={item.image.id}
             src={`${item.image.url}`}
-            width={1080}
-            height={1860}
+            width={600}
+            height={600}
             alt={`${item.image.alt}`}
             className="absolute max-w-none dark:brightness-90 w-[600px] h-auto"
           />
