@@ -15,7 +15,7 @@ export type StackJourneyProps = SliceComponentProps<Content.StackJourneySlice>;
 const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
   const class_raw = "flex grid grid-cols-2 min-h-[370px]";
   const class_container_skills =
-    "relative p-6 flex justify-end items-end h-full w-full border boredr-border overflow-hidden";
+    "relative p-6 flex justify-end items-end h-full w-full border border-border overflow-hidden";
   const class_container_text = "pt-8 w-[425px] max-w-full";
   return (
     <section
