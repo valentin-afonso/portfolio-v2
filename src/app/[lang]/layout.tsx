@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { GeistMono } from "geist/font/mono";
@@ -12,6 +12,7 @@ type LayoutType = {
   params: any;
 };
 
+/*
 export const metadata: Metadata = {
   title: "valentin.afso",
   description: "Welcome on my portfolio !",
@@ -41,6 +42,7 @@ export const metadata: Metadata = {
     ],
   },
 };
+*/
 
 export default async function RootLayout({ children, params }: LayoutType) {
   const { lang } = await params;
