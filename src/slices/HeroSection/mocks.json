@@ -121,7 +121,6 @@
 							[
 								"image_resume",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51",
@@ -139,7 +138,33 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			},
+			"last_text": {
+				"__TYPE__": "FieldContent",
+				"value": "north",
+				"type": "Text"
+			},
+			"skills": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"skill",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "PHP",
+									"type": "Select"
 								}
 							]
 						]

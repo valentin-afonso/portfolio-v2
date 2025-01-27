@@ -175,7 +175,24 @@ section[data-slice-type="hero_section"] p {
 section[data-slice-type="hero_section"] .status_pro p {
   @apply text-xs;
 }
-
+section[data-slice-type="hero_section"] .hero_tech ul {
+  @apply gap-0 translate-x-6;
+}
+section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(1) {
+  transform: translate(12px, 0) rotate(-30deg);
+}
+section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(2) {
+  transform: translate(0px, -16px) rotate(0deg);
+}
+section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(3) {
+  transform: translate(-8px, 8px) rotate(12deg);
+}
+section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(4) {
+  transform: translate(-20px, -12px) rotate(-16deg);
+}
+section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(5) {
+  transform: translate(-28px, 0px) rotate(0deg);
+}
 section[data-slice-type="career_section"] .control button,
 section[data-slice-type="degree_section"] .control button {
   @apply transform-none;

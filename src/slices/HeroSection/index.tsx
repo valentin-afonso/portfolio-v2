@@ -11,6 +11,7 @@ import {
 import SvgWave from "@/components/svg/SvgWave";
 import GridLayout from "@/components/GridLayout";
 import Avatar from "@/components/Avatar";
+import Skills from "@/components/Skills";
 
 const components: JSXMapSerializer = {
   hyperlink: ({ node, children }) => {
@@ -55,13 +56,17 @@ const HeroSection = ({ slice }: HeroSectionProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <GridLayout additional_class="flex justify-between items-center min-h-screen">
+      <GridLayout additional_class="flex justify-between items-center min-h-screen pt-[74px]">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-4 ">
             <Avatar img={slice.primary.profil} />
             <StatusPro status={slice.primary.status} />
           </div>
           <PrismicRichText field={slice.primary.text} components={components} />
+          <div className="flex items-center gap-2 hero_tech mt-8">
+            <p className="text-lg">{slice.primary.last_text}</p>
+            <Skills skills={slice.primary.skills} isLight />
+          </div>
         </div>
         <SocialsHero socials={slice.primary.socials} />
       </GridLayout>

@@ -42,6 +42,74 @@
             ]
           }
         },
+        "last_text": {
+          "type": "Text",
+          "config": {
+            "label": "Last text",
+            "placeholder": ""
+          }
+        },
+        "skills": {
+          "type": "Group",
+          "config": {
+            "label": "skills",
+            "repeat": true,
+            "fields": {
+              "skill": {
+                "type": "Select",
+                "config": {
+                  "label": "skill",
+                  "placeholder": "",
+                  "options": [
+                    "react",
+                    "next",
+                    "javascript",
+                    "PHP",
+                    "html",
+                    "css",
+                    "figma",
+                    "prestashop",
+                    "contao",
+                    "tailwind",
+                    "adobeXD",
+                    "illustrator",
+                    "dato",
+                    "drupal",
+                    "flutter",
+                    "github",
+                    "ionic",
+                    "laravel",
+                    "neltifly",
+                    "photoshop",
+                    "strapi",
+                    "swift",
+                    "symfony",
+                    "typescript",
+                    "vercel",
+                    "vue",
+                    "wordpress",
+                    "payload",
+                    "apiplatform",
+                    "docker",
+                    "prismic",
+                    "hono",
+                    "OPQUAST",
+                    "mongoDB",
+                    "mySQL",
+                    "firebase",
+                    "directus",
+                    "cohere",
+                    "imdb",
+                    "nextauth",
+                    "api",
+                    "express",
+                    "scss"
+                  ]
+                }
+              }
+            }
+          }
+        },
         "socials": {
           "type": "Group",
           "config": {

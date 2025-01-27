@@ -742,6 +742,65 @@ export type FloatingTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *HeroSection → Default → Primary → skills*
+ */
+export interface HeroSectionSliceDefaultPrimarySkillsItem {
+  /**
+   * skill field in *HeroSection → Default → Primary → skills*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.skills[].skill
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  skill: prismic.SelectField<
+    | "react"
+    | "next"
+    | "javascript"
+    | "PHP"
+    | "html"
+    | "css"
+    | "figma"
+    | "prestashop"
+    | "contao"
+    | "tailwind"
+    | "adobeXD"
+    | "illustrator"
+    | "dato"
+    | "drupal"
+    | "flutter"
+    | "github"
+    | "ionic"
+    | "laravel"
+    | "neltifly"
+    | "photoshop"
+    | "strapi"
+    | "swift"
+    | "symfony"
+    | "typescript"
+    | "vercel"
+    | "vue"
+    | "wordpress"
+    | "payload"
+    | "apiplatform"
+    | "docker"
+    | "prismic"
+    | "hono"
+    | "OPQUAST"
+    | "mongoDB"
+    | "mySQL"
+    | "firebase"
+    | "directus"
+    | "cohere"
+    | "imdb"
+    | "nextauth"
+    | "api"
+    | "express"
+    | "scss"
+  >;
+}
+
+/**
  * Item in *HeroSection → Default → Primary → socials*
  */
 export interface HeroSectionSliceDefaultPrimarySocialsItem {
@@ -849,6 +908,28 @@ export interface HeroSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Last text field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.last_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last_text: prismic.KeyTextField;
+
+  /**
+   * skills field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.skills[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  skills: prismic.GroupField<
+    Simplify<HeroSectionSliceDefaultPrimarySkillsItem>
+  >;
 
   /**
    * socials field in *HeroSection → Default → Primary*
@@ -1702,6 +1783,7 @@ declare module "@prismicio/client" {
       FloatingTextSliceVariation,
       FloatingTextSliceDefault,
       HeroSectionSlice,
+      HeroSectionSliceDefaultPrimarySkillsItem,
       HeroSectionSliceDefaultPrimarySocialsItem,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
