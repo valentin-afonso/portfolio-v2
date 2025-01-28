@@ -1,4 +1,3 @@
-// import type { Metadata } from "next";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { GeistMono } from "geist/font/mono";
@@ -11,38 +10,6 @@ type LayoutType = {
   children: React.ReactNode;
   params: any;
 };
-
-/*
-export const metadata: Metadata = {
-  title: "valentin.afso",
-  description: "Welcome on my portfolio !",
-  openGraph: {
-    title: "valentin.afso",
-    description: "Welcome on my portfolio !",
-    type: "article",
-    url: "https://valentinafso.vercel.app/",
-    images: [
-      {
-        url: "https://valentinafso.vercel.app/images/twitter-image.jpg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "valentin.afso",
-    description: "Welcome on my portfolio !",
-    creator: "@valentinafso",
-    images: [
-      {
-        url: "https://valentinafso.vercel.app/images/twitter-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "twitter image protfolio",
-      },
-    ],
-  },
-};
-*/
 
 export default async function RootLayout({ children, params }: LayoutType) {
   const { lang } = await params;
