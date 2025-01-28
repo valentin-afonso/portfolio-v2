@@ -22,7 +22,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
     <>
       <Drawer>
         <DrawerTrigger
-          className="project h-[326px] bg-secondary flex rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 overflow-hidden cursor-pointer"
+          className="project h-[326px] min-h-[326px] max-h-[326px] bg-secondary flex justify-between rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 overflow-hidden cursor-pointer"
           asChild
         >
           <div>{children}</div>
@@ -30,7 +30,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
         <DrawerContent className="drawer_project dark:bg-secondary mb-4 dark:border-white/15">
           <div className="flex w-full border-t border-b border-border/50 dark:border-white/15 ">
             <div
-              className={`drawer_image relative min-w-96 min-h-64 border-r border-border/50 dark:border-white/15 overflow-hidden ${slice.primary.custom_class}`}
+              className={`drawer_image relative min-w-96 min-h-[288px] max-h-[288px] border-r border-border/50 dark:border-white/15 overflow-hidden ${slice.primary.custom_class}`}
             >
               {slice.primary.images?.map((item: any) => (
                 <Image

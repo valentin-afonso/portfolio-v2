@@ -15,7 +15,7 @@ export default function ProjectItem({ slice }: any) {
   if (!image_exist) return null;
   return (
     <ProjectTrigger slice={slice}>
-      <div className="flex flex-col gap-4 p-6 w-[577px] h-full">
+      <div className="flex flex-col gap-4 p-6 w-[577px] max-w-[555px] min-w-[555px] h-full">
         <div className="flex justify-between items-center pb-4">
           <p className="project_title font-bold text-xl">
             {slice.primary.title}
