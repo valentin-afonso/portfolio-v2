@@ -21,9 +21,12 @@ export default async function BlocDegree() {
           slidesToScroll: 2,
         }}
       >
-        <CarouselContent className="ml-[-100px]">
+        <CarouselContent className="ml-[-60px] xl:ml-[-100px]">
           {degree.data.slices.map((slice) => (
-            <CarouselItem key={slice.id} className="basis-1/2 pl-[100px]">
+            <CarouselItem
+              key={slice.id}
+              className="basis-1/2 pl-[60px] xl:pl-[100px]"
+            >
               <DegreeItem slice={slice} />
             </CarouselItem>
           ))}

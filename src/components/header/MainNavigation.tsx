@@ -5,7 +5,7 @@ export async function MainNavigation() {
   const client = createClient();
   const navigation = await client.getByUID("navigation", "main_navigation");
   return (
-    <nav>
+    <nav className="hidden md:block">
       <ul className="flex items-center gap-4">
         {navigation.data.slices.map((slice) => (
           <li key={slice.id}>

@@ -44,7 +44,7 @@ export default function SocialHeroLink({ social }: any) {
       <Link
         href={social.link.url}
         target="_blank"
-        className="relative group/herolink w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl overflow-hidden"
+        className="relative group/herolink w-32 lg:w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl overflow-hidden"
       >
         <SvgWave additional_class="absolute top-[-7rem] left-[-5rem]" />
         {icon}

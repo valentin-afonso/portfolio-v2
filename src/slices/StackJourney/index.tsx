@@ -13,7 +13,8 @@ export type StackJourneyProps = SliceComponentProps<Content.StackJourneySlice>;
  * Component for "StackJourney" Slices.
  */
 const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
-  const class_raw = "flex grid grid-cols-2 min-h-[370px]";
+  const class_raw =
+    "flex flex-col gap-4 even:flex-col-reverse mxs:gap-0 mxs:grid mxs:grid-cols-2 min-h-none mxs:min-h-[450px] md:min-h-[370px]";
   const class_container_skills =
     "relative p-6 flex justify-end items-end h-full w-full border border-border overflow-hidden";
   const class_container_text = "pt-8 w-[425px] max-w-full";
@@ -30,7 +31,7 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
         <div className="absolute top-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
         <div className="absolute top-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
         <div className={class_raw}>
-          <div className={class_container_text}>
+          <div className={`${class_container_text} pr-4`}>
             <PrismicRichText field={slice.primary.favorite_stack} />
           </div>
           <div className={class_container_skills}>
@@ -43,12 +44,12 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
             <SvgWave additional_class="absolute top-[-16.5rem] left-[-12rem] w-[956px] h-auto rotate-[66deg]" />
             <Skills skills={slice.primary.skills_next} isLight />
           </div>
-          <div className={`pl-8 ${class_container_text}`}>
+          <div className={`mxs:pl-8 ${class_container_text}`}>
             <PrismicRichText field={slice.primary.next_stack} />
           </div>
         </div>
         <div className={class_raw}>
-          <div className={class_container_text}>
+          <div className={`${class_container_text} pr-4`}>
             <PrismicRichText field={slice.primary.other} />
           </div>
           <div className={class_container_skills}>

@@ -24,7 +24,7 @@ export default function LinkResume({ children, social }: Type) {
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <div className="relative group/herolink w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl cursor-pointer overflow-hidden">
+          <div className="relative group/herolink w-32 lg:w-40 h-32 p-3 flex flex-col justify-between border border-border hover:border-black/80 dark:hover:border-white/80 rounded-xl cursor-pointer overflow-hidden">
             {children}
           </div>
         </DialogTrigger>

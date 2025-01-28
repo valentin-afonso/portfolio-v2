@@ -20,7 +20,7 @@ export default function SlideCareer({ children, slice }: SlideType) {
     <>
       <Drawer>
         <DrawerTrigger asChild>
-          <div className="group/slide relative h-full slide_gradient text-white/95 p-10 rounded-xl overflow-hidden cursor-pointer">
+          <div className="group/slide relative h-full slide_gradient text-white/95 p-6 pt-10 xl:p-10 xl:pt-10 rounded-xl overflow-hidden cursor-pointer">
             <div className="absolute right-0 top-0 w-[170px] h-full border-white/20 dark:border-border border-l overflow-hidden">
               <SvgWave additional_class="absolute top-[-11rem] left-[-16rem] w-[895px] h-auto rotate-[-20deg]" />
             </div>

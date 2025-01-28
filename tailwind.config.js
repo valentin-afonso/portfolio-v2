@@ -65,6 +65,11 @@ module.exports = {
         "icon-tech": "40px",
       },
       fontFamily: { geist: ["GeistMono", "sans-serif"] },
+      screens: {
+        xxs: "440px",
+        xs: "500px",
+        mxs: "550px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
