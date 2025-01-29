@@ -37,7 +37,7 @@ export default function LeetcodeCounter({ counter }: any) {
             )}
           </div>
         </div>
-        <span className="text-xs text-black/60 dark:text-white/60">
+        <span className="text-xs text-black/60 dark:text-white/60 text-center">
           problems solved
         </span>
       </div>

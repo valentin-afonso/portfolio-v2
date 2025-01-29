@@ -28,9 +28,9 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
           <div>{children}</div>
         </DrawerTrigger>
         <DrawerContent className="drawer_project dark:bg-secondary mb-4 dark:border-white/15">
-          <div className="flex w-full border-t border-b border-border/50 dark:border-white/15 ">
+          <div className="flex flex-wrap xl:flex-nowrap w-full border-t border-b border-border/50 dark:border-white/15 ">
             <div
-              className={`drawer_image relative min-w-96 min-h-[288px] max-h-[288px] border-r border-border/50 dark:border-white/15 overflow-hidden ${slice.primary.custom_class}`}
+              className={`hidden md:block drawer_image order-2 xl:order-1 relative min-w-96 min-h-[288px] max-h-[288px] max-xl:border-t max-xl:border-border/50 max-xl:dark:border-white/15 border-r border-border/50 dark:border-white/15 overflow-hidden ${slice.primary.custom_class}`}
             >
               {slice.primary.images?.map((item: any) => (
                 <Image
@@ -43,7 +43,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
                 />
               ))}
             </div>
-            <div className="px-8 py-8 shrink border-r border-border/50 dark:border-white/15">
+            <div className="px-8 py-8 shrink w-full xl:w-auto order-1 xl:order-2 border-r border-border/50 dark:border-white/15">
               <DrawerTitle className="project_title font-bold text-xl mb-4">
                 {slice.primary.title}
               </DrawerTitle>
@@ -68,7 +68,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
               </div>
               <PrismicRichText field={slice.primary.description} />
             </div>
-            <div className="p-8">
+            <div className="order-3 p-8 shrink grow max-xl:border-t max-xl:border-border/50 max-xl:dark:border-white/15">
               <Skills skills={slice.primary.skills} isLight />
             </div>
           </div>

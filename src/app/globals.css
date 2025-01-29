@@ -357,8 +357,18 @@ footer .socials svg {
 }
 
 .drawer_project ul:has(.tech) {
-  @apply grid;
-  grid-template-columns: repeat(4, auto);
+  @apply flex flex-wrap w-full;
+}
+@media (width >= 600px) {
+  .drawer_project ul:has(.tech) {
+    @apply grid w-max;
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (width >= 900px) {
+  .drawer_project ul:has(.tech) {
+    grid-template-columns: repeat(4, auto);
+  }
 }
 .drawer_project p {
   @apply opacity-65;
