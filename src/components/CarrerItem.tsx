@@ -20,7 +20,7 @@ export default function CarrerItem({ slice }: any) {
       <p className="font-medium text-base xl:text-xl mb-16">
         {slice.primary.company}, {slice.primary.location}
       </p>
-      <div className="flex items-center flex-wrap gap-4">
+      <div className="flex items-center flex-wrap gap-2 xs:gap-4">
         <Skills skills={first_skills} />
         {is_to_long && <BtnDetailsCareer count={count} />}
       </div>

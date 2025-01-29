@@ -18,14 +18,17 @@ export default async function BlocDegree() {
         className="slider_visible noselect"
         opts={{
           dragFree: false,
-          slidesToScroll: 2,
+          breakpoints: {
+            "(min-width: 1024px)": { slidesToScroll: 2 },
+            "(max-width: 1023px)": { slidesToScroll: 1 },
+          },
         }}
       >
         <CarouselContent className="ml-[-60px] xl:ml-[-100px]">
           {degree.data.slices.map((slice) => (
             <CarouselItem
               key={slice.id}
-              className="basis-1/2 pl-[60px] xl:pl-[100px]"
+              className="basis-full lg:basis-1/2 pl-[60px] xl:pl-[100px]"
             >
               <DegreeItem slice={slice} />
             </CarouselItem>

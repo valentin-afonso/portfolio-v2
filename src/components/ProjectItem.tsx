@@ -15,7 +15,7 @@ export default function ProjectItem({ slice }: any) {
   if (!image_exist) return null;
   return (
     <ProjectTrigger slice={slice}>
-      <div className="flex flex-col gap-4 p-6 w-[577px] max-w-[555px] min-w-[555px] h-full">
+      <div className="flex flex-col gap-4 p-6 w-full lg:w-[577px] lg:max-w-[555px] lg:min-w-[555px] h-full">
         <div className="flex justify-between items-center pb-4">
           <p className="project_title font-bold text-xl">
             {slice.primary.title}
@@ -46,7 +46,7 @@ export default function ProjectItem({ slice }: any) {
         </div>
       </div>
       <div
-        className={`relative  h-full w-[555px] overflow-hidden ${slice.primary.custom_class}`}
+        className={`relative h-48  lg:h-full w-full lg:w-[555px] overflow-hidden ${slice.primary.custom_class}`}
       >
         {slice.primary.images?.map((item: any) => (
           <Image

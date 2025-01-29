@@ -22,7 +22,7 @@ export default function ProjectTrigger({ children, slice }: ProjetTriggerType) {
     <>
       <Drawer>
         <DrawerTrigger
-          className="project h-[326px] min-h-[326px] max-h-[326px] bg-secondary flex justify-between rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 overflow-hidden cursor-pointer"
+          className="project h-auto lg:h-[326px] lg:min-h-[326px] lg:max-h-[326px] bg-secondary flex flex-col-reverse lg:flex-row justify-between rounded-xl border border-border/25 hover:border-border dark:border-transparent hover:dark:border-white/20 overflow-hidden cursor-pointer"
           asChild
         >
           <div>{children}</div>

@@ -18,7 +18,7 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pt-24 pb-44"
+      className="pt-24 pb-24 md:pb-44"
       id="blog"
     >
       <GridLayout>

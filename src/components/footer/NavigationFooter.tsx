@@ -3,7 +3,7 @@ import { PrismicNextLink } from "@prismicio/next";
 
 export default function NavigationFooter({ slice }: any) {
   return (
-    <div>
+    <div className="pt-4 sm:pt-0">
       <PrismicRichText field={slice.primary.title} />
       <ul>
         {slice.primary.links.map((item: any) => (

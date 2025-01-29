@@ -6,7 +6,7 @@ import IconGithub from "@/components/svg/socials/IconGithub";
 
 export default function SocialsFooter({ slice }: any) {
   return (
-    <div className="socials">
+    <div className="socials pt-4 sm:pt-0">
       <PrismicRichText field={slice.primary.title} />
       <ul className="flex items-center gap-8">
         {slice.primary.social.map((item: any) => (
