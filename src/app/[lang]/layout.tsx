@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import "@/app/globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import NavMobile from "@/components/NavMobile";
 import { ThemeProvider } from "@/app/theme-provider";
 
 type LayoutType = {
@@ -28,6 +29,7 @@ export default async function RootLayout({ children, params }: LayoutType) {
         >
           <Header lang={lang} />
           {children}
+          <NavMobile />
           <Footer />
         </ThemeProvider>
       </body>
