@@ -25,11 +25,11 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
       className="pb-4"
     >
       <GridLayout additional_class="relative">
-        <div className="absolute top-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
-        <div className="absolute top-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+        <div className="hidden md:block absolute top-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="hidden md:block absolute top-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
 
-        <div className="absolute top-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
-        <div className="absolute top-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+        <div className="hidden md:block absolute top-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="hidden md:block absolute top-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
         <div className={class_raw}>
           <div className={`${class_container_text} pr-4`}>
             <PrismicRichText field={slice.primary.favorite_stack} />
@@ -57,11 +57,11 @@ const StackJourney = ({ slice }: StackJourneyProps): JSX.Element => {
             <Skills skills={slice.primary.skills_other} isLight />
           </div>
         </div>
-        <div className="absolute bottom-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
-        <div className="absolute bottom-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+        <div className="hidden md:block absolute bottom-[-40px] left-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="hidden md:block absolute bottom-[-90px] left-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
 
-        <div className="absolute bottom-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
-        <div className="absolute bottom-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
+        <div className="hidden md:block absolute bottom-[-40px] right-[-140px] w-4/12 h-[1px] bg_h_line"></div>
+        <div className="hidden md:block absolute bottom-[-90px] right-[-40px] h-[10rem] w-[1px] bg_v_line"></div>
       </GridLayout>
     </section>
   );
