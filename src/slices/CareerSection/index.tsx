@@ -17,7 +17,7 @@ const CareerSection = ({ slice }: CareerSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pt-24 pb-24 max-w-[100vw] overflow-x-hidden"
+      className="pt-24 pb-24"
       id="career"
     >
       <GridLayout additional_class="relative overflow-visible">

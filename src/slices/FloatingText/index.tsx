@@ -15,7 +15,7 @@ const FloatingText = ({ slice }: FloatingTextProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pb-24 md:pb-64 text-center text-3xl"
+      className="pb-24 md:pb-64 text-center text-3xl max-w-[100vw] overflow-x-hidden"
     >
       <GridLayout additional_class="relative py-8 md:py-16">
         <div className="absolute top-[-40px] left-0 md:left-[-140px] w-4/12 h-[1px] bg_h_line"></div>

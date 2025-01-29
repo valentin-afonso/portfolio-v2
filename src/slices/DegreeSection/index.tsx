@@ -18,7 +18,7 @@ const DegreeSection = ({ slice }: DegreeSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pt-24 max-w-[100vw] overflow-x-hidden"
+      className="pt-24 "
       id="degree"
     >
       <GridLayout additional_class="relative">
