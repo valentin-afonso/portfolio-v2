@@ -25,13 +25,20 @@
   scrollbar-color: hsl(var(--border-scrollbar)) transparent;
 }
 
-/*
-
-*/
-body[data-scroll-locked="1"] header,
 .with-scroll-bars-hidden {
   overflow: hidden !important;
   padding-right: 11px !important;
+}
+
+body[data-scroll-locked="1"] header {
+  overflow: hidden !important;
+  padding-right: 0 !important;
+}
+@media (width >= 550px) {
+  body[data-scroll-locked="1"] header {
+    overflow: hidden !important;
+    padding-right: 11px !important;
+  }
 }
 body[data-scroll-locked] {
   overflow: hidden !important;
@@ -60,7 +67,6 @@ body[data-scroll-locked] {
 .width-before-scroll-bar .width-before-scroll-bar {
   margin-right: 0 !important;
 }
-
 body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 11px;
 }
