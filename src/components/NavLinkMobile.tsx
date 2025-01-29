@@ -7,10 +7,7 @@ import IconProjects from "@/components/svg/nav/IconProjects";
 
 export default function NavLinkMobile({ link }: any) {
   if (!link) return null;
-  console.log(link);
   const url = link && link.url ? link.url : "/";
-  // const text = link && link.text ? link.text : "undefined";
-
   const getIcon = () => {
     if (link.url === "#career") {
       return <IconCareer />;
