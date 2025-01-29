@@ -7,9 +7,9 @@ export default async function NavMobile() {
 
   return (
     <nav className="z-50 block sm:hidden fixed bottom-4 left-0 w-full px-3">
-      <ul className="bg_blur w-full flex justify-center items-center gap-5 border-2 border-border/15 rounded-full">
+      <ul className="bg_blur w-full flex justify-center items-center gap-5 border-2 border-border/15 dark:border-white/10 rounded-full">
         {navigation.data.slices.map((slice) => (
-          <li key={slice.id} className="py-4 px-2">
+          <li key={slice.id} className="py-4 px-3">
             <NavLinkMobile link={slice.primary.link} />
           </li>
         ))}
