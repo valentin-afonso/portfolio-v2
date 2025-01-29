@@ -226,6 +226,7 @@ footer .logo {
     position: initial;
   }
 }
+
 @media (width >= 500px) {
   section[data-slice-type="hero_section"] .hero_tech ul li:nth-child(1) {
     transform: translate(12px, 0) rotate(-30deg);
@@ -412,6 +413,18 @@ footer .socials svg {
     rgba(255, 255, 255, 0.12) 65%,
     rgba(255, 255, 255, 0) 100%
   );
+}
+/*
+.bg_h_line,
+.bg_v_line {
+  @apply hidden;
+}
+  */
+@media (width >= 768px) {
+  .bg_h_line,
+  .bg_v_line {
+    @apply block;
+  }
 }
 /*floating_text*/
 section[data-slice-type="floating_text"] p {
