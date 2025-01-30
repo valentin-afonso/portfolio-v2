@@ -66,6 +66,7 @@ module.exports = {
       },
       fontFamily: { geist: ["GeistMono", "sans-serif"] },
       screens: {
+        xxxs: "400px",
         xxs: "440px",
         xs: "500px",
         mxs: "550px",

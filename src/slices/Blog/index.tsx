@@ -27,7 +27,7 @@ const Blog = ({ slice }: BlogProps): JSX.Element => {
           <Link
             href="https://www.staytuneed.com/blog/author/valentin-afonso"
             target="_blank"
-            className="group flex items-center gap-2"
+            className="group flex items-center gap-2 mb-4"
           >
             {slice.primary.link.text}
             <ArrowUpRight />

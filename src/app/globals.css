@@ -255,6 +255,11 @@ section[data-slice-type="degree_section"] .control button {
   @apply transform-none;
   position: initial;
 }
+@media (width <= 400px) {
+  section[data-slice-type="career_section"] ul li:last-child {
+    @apply hidden;
+  }
+}
 
 .embla__progress {
   @apply relative bg-black/40 dark:bg-white/40 h-[2px] w-20 overflow-hidden;
@@ -526,6 +531,24 @@ section[data-slice-type="floating_text"] p {
 }
 .project:hover .swalkers img:nth-child(2) {
   transform: translate(-40px, 0px);
+}
+
+@media (width <= 640px) {
+  .staytuneed img,
+  .cadena img,
+  .mindcheck img,
+  .netflix img,
+  .portfolio img {
+    @apply w-[450px] h-auto;
+  }
+  .swalkers img {
+    @apply w-[530px] h-auto;
+    right: -9rem;
+    bottom: -12rem;
+  }
+  .indys img {
+    @apply w-[360px] h-auto;
+  }
 }
 
 .drawer_image img:nth-child(1) {
