@@ -15,7 +15,7 @@ export default function ArticleTeaser({ article }: any) {
   return (
     <Link
       href={`https://www.staytuneed.com//blog/${article.slug}`}
-      className="group bg-secondary flex flex-col max-w-[100%] w-full md:w-[200px] sm:w-[276px] min-h-[355px] h-full rounded-xl border border-[#E9E9E9] dark:border-[#393939] hover:border-[#d3d2d2] dark:hover:border-[#575757] shadow-light hover:shadow-md"
+      className="group bg-secondary flex flex-col max-w-[100%] w-full min-h-[355px] h-full rounded-xl border border-[#E9E9E9] dark:border-[#393939] hover:border-[#d3d2d2] dark:hover:border-[#575757] shadow-light hover:shadow-md"
       target="_blank"
     >
       <Image
