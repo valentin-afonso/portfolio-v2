@@ -9,7 +9,7 @@ export default function Header({ lang }: { lang: string }) {
       <GridLayout additional_class="flex items-center justify-between min-h-[72px]">
         <Logo />
         <div className="flex items-center gap-8">
-          <MainNavigation />
+          <MainNavigation lang={lang} />
           <HeaderSettings lang={lang} />
         </div>
       </GridLayout>

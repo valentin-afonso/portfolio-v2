@@ -42,6 +42,7 @@ export const LanguageSwitcher = ({ locales }: LanguageSwitcherProps) => (
               href={locale.url}
               locale={locale.lang}
               aria-label={`Change language to ${locale.lang_name}`}
+              className="w-full"
             >
               {localeLabels[locale.lang as keyof typeof localeLabels] ||
                 locale.lang}

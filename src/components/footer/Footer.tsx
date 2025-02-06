@@ -7,9 +7,9 @@ import SvgWaveXl from "@/components/svg/SvgWaveXl";
 import ToTop from "@/components/footer/ToTop";
 import FooterComponents from "@/components/footer/FooterComponents";
 
-export default async function Footer() {
+export default async function Footer({ lang }: { lang: string }) {
   const client = createClient();
-  const footer = await client.getByUID("footer", "footer");
+  const footer = await client.getByUID("footer", "footer", { lang: lang });
 
   return (
     <footer className="mb-8">

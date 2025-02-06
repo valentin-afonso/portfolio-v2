@@ -29,8 +29,8 @@ export default async function RootLayout({ children, params }: LayoutType) {
         >
           <Header lang={lang} />
           {children}
-          <NavMobile />
-          <Footer />
+          <NavMobile lang={lang} />
+          <Footer lang={lang} />
         </ThemeProvider>
       </body>
       <PrismicPreview repositoryName={repositoryName} />
