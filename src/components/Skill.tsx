@@ -41,6 +41,9 @@ import IconCohere from "@/components/svg/tech/IconCohere";
 import IconApi from "@/components/svg/tech/IconApi";
 import IconNextAuth from "@/components/svg/tech/IconNextAuth";
 import IconScss from "@/components/svg/tech/IconScss";
+import IconBetterAuth from "@/components/svg/tech/IconBetterAuth";
+import IconCloudfare from "@/components/svg/tech/IconCloudfare";
+import IconVite from "@/components/svg/tech/IconVite";
 
 type TechName = string;
 type TechLibelle = string;
@@ -90,6 +93,9 @@ export default function Skill({ skill }: any) {
     nextauth: IconNextAuth,
     api: IconApi,
     scss: IconScss,
+    betterauth: IconBetterAuth,
+    cloudfare: IconCloudfare,
+    vite: IconVite,
   };
   const techLibeleMap: Record<TechName, TechLibelle> = {
     react: "React",
@@ -135,12 +141,15 @@ export default function Skill({ skill }: any) {
     nextauth: "Next-auth",
     api: "Ext. API",
     scss: "scss",
+    betterauth: "Better-auth",
+    cloudfare: "Cloudfare",
+    vite: "Vite",
   };
   const IconComponent = techIconMap[skill.skill];
   const IconLibelle = techLibeleMap[skill.skill];
 
   return (
-    <li className="group relative h-max">
+    <li className="relative group h-max">
       {IconLibelle && (
         <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] opacity-0 group-hover:opacity-100 w-full text-center transition-all ">
           {IconLibelle}

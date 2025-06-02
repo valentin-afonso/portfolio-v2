@@ -111,7 +111,10 @@
                     "nextauth",
                     "api",
                     "express",
-                    "scss"
+                    "scss",
+                    "cloudfare",
+                    "vite",
+                    "betterauth"
                   ]
                 }
               }
