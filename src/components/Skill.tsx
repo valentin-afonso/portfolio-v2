@@ -149,9 +149,9 @@ export default function Skill({ skill }: any) {
   const IconLibelle = techLibeleMap[skill.skill];
 
   return (
-    <li className="relative group h-max">
+    <li className="relative group h-max" data-name={IconLibelle}>
       {IconLibelle && (
-        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] opacity-0 group-hover:opacity-100 w-full text-center transition-all ">
+        <span className="absolute bottom-0 left-0 text-xs group-hover:translate-y-[14px] opacity-0 group-hover:opacity-100 w-full text-center transition-all special_width">
           {IconLibelle}
         </span>
       )}
